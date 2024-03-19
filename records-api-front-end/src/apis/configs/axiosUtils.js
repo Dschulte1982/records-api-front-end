@@ -1,4 +1,4 @@
-export function defineCancelApiObjects(apiObject) {
+export function defineCancelApiObject(apiObject) {
   const cancelApiObject = {};
 
   Object.getOwnPropertyNames(apiObject).forEach((apiPropertyName) => {

@@ -3,7 +3,7 @@ import { notification } from "andtd";
 
 // Create the base URL to connect to the API
 export const api = axios.create({
-  baseURL: "https://crudapi.dustinschulte.com/api/records",
+  baseURL: "https://crudapi.dustinschulte.com/api",
 });
 
 // Define the error handler for all APIs
