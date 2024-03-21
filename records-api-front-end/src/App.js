@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import MainHeader from "./components/MainHeader";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div style={{ height: "440px", backgroundColor: "white" }}>
       <MainHeader />
     </div>
   );
