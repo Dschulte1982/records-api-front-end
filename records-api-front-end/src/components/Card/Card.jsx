@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export const Card = ({ record: { id, name, description, price, rating } }) => {
   return (
-    <div className="card-container">
+    <div className="card-container" key={id}>
       <div
         className="card-table"
         style={{ display: "flex", flexDirection: "column" }}
@@ -42,6 +42,7 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
 };
 
 Card.propTypes = {
+  id: PropTypes.string,
   name: PropTypes.string,
   description: PropTypes.string,
   price: PropTypes.string,

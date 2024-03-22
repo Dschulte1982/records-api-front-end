@@ -1,5 +1,5 @@
 import axios from "axios";
-import { notification } from "andtd";
+import { notification } from "antd";
 
 // Create the base URL to connect to the API
 export const api = axios.create({
