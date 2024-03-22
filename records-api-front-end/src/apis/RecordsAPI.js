@@ -13,7 +13,7 @@ export const RecordsAPI = {
     });
 
     // Return the single record returned by the API
-    return response.data.record;
+    return response.data;
   },
 
   getAll: async function (cancel = false) {
@@ -24,7 +24,8 @@ export const RecordsAPI = {
         ? cancelApiObject[this.getAll.name].handleRequestCancellation().signal
         : undefined,
     });
-    return response.data.records;
+    console.log(response);
+    return response.data;
   },
 
   create: async function (record, cancel = false) {

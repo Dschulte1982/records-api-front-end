@@ -1,34 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "../Card/Card";
+import { RecordsAPI } from "../../apis/RecordsAPI";
 
 export const CardLoader = () => {
-  const arrayOfRecords = [
-    { id: 1, name: "Dog", description: "A Dog", price: "1.99", rating: "1" },
-    { id: 2, name: "Pig", description: "A Pig", price: "2.99", rating: "2" },
-    { id: 3, name: "Cat", description: "A Cat", price: "3.99", rating: "3" },
-    { id: 4, name: "Bird", description: "A Bird", price: "4.99", rating: "4" },
-    {
-      id: 5,
-      name: "Snake",
-      description: "A Snake",
-      price: "5.99",
-      rating: "5",
-    },
-  ];
+  const [recordsListLoading, setRecordsListLoading] = useState(false);
+  const [recordsList, setRecordsList] = useState([]);
+
+  useEffect(() => {
+    setRecordsListLoading(true);
+    RecordsAPI.getAll().then((records) => {
+      setRecordsList(records);
+    });
+  }, []);
+
   return (
     <div
       className="card-loader"
       style={{
-        height: "150px",
+        height: "250px",
         overflowY: "scroll",
         textAlign: "justify",
+        margin: "30px 0px 0px 0px",
         padding: "20px",
       }}
     >
-      {arrayOfRecords.map((record) => (
-        <p key={record.id}>
-          <Card key={record.id} record={record} />
-        </p>
+      {recordsList.map((record) => (
+        <Card key={record.id} record={record} />
       ))}
     </div>
   );
