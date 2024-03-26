@@ -18,10 +18,14 @@ export const CardLoader = () => {
       className="card-loader"
       style={{
         height: "250px",
+        width: "233px",
         overflowY: "scroll",
+        msOverflowStyle: "none",
+        scrollbarWidth: "none",
         textAlign: "justify",
-        margin: "30px 0px 0px 0px",
+        margin: "30px 0px 0px -8px",
         padding: "20px",
+        WebkitScrollBar: { display: "none" },
       }}
     >
       {recordsList.map((record) => (
