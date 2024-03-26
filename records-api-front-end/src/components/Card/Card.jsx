@@ -6,14 +6,21 @@ const headerStyling = {
   color: "gray",
   fontWeight: "bold",
   fontSize: "9px",
-  flexGrow: "2",
+  margin: "3px 0 0 8px",
 };
 
 const textStyling = {
   fontFamily: "sans-serif",
   fontSize: "10px",
-  margin: "0 0 0 5px",
-  flexGrow: "8",
+  margin: "3px 0 0 5px",
+};
+
+const flexGrowName = {
+  margin: "0 10px 0 40px",
+};
+
+const flexGrowDescription = {
+  margin: "0 5px 0 5px",
 };
 
 export const Card = ({ record: { id, name, description, price, rating } }) => {
@@ -36,13 +43,13 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
       >
         <div
           className="card-row-1"
-          style={{ display: "flex", flexDirection: "row" }}
+          style={{ display: "flex", flexDirection: "row", margin: "2px 0 0 0" }}
         >
           <div className="row-item-1-header" style={headerStyling}>
             NAME
           </div>
-          <div className="row-item-1" style={textStyling}>
-            {name}
+          <div className="row-item-1" style={flexGrowName}>
+            <div style={textStyling}>{name}</div>
           </div>
         </div>
         <div
@@ -52,8 +59,8 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
           <div className="row-item-2-header" style={headerStyling}>
             DESCRIPTION
           </div>
-          <div className="row-item-2" style={textStyling}>
-            {description}
+          <div className="row-item-2" style={flexGrowDescription}>
+            <div style={textStyling}>{description}</div>
           </div>
         </div>
         <div
@@ -63,13 +70,13 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
           <div className="row-item-3-header" style={headerStyling}>
             PRICE
           </div>
-          <div className="row-item-3" style={textStyling}>
-            {price}
+          <div className="row-item-3" style={flexGrowName}>
+            <div style={textStyling}>${price}</div>
           </div>
         </div>
         <div
           className="card-row-4"
-          style={{ display: "flex", flexDirection: "row" }}
+          style={{ display: "flex", flexDirection: "row", margin: "0 0 5px 0" }}
         >
           <div className="row-item-4-header" style={headerStyling}>
             RATING

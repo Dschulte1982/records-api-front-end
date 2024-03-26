@@ -21,8 +21,9 @@ export const MainHeader = () => {
             backgroundColor: "#206EF3",
             color: "#FFFFFF",
             border: "0px",
-            borderRadius: "0.5rem",
-            padding: "0.5rem 0.6rem",
+            borderRadius: "1rem",
+            padding: "0.5rem 0.8rem",
+            fontSize: "10px",
           }}
         >
           New Record
