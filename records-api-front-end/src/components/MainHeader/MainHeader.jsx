@@ -12,8 +12,8 @@ export const MainHeader = () => {
         alignItems: "center",
       }}
     >
-      <div>
-        <h1>All Records</h1>
+      <div style={{ fontFamily: "sans-serif" }}>
+        <h2>All Records</h2>
       </div>
       <div>
         <button
@@ -22,7 +22,7 @@ export const MainHeader = () => {
             color: "#FFFFFF",
             border: "0px",
             borderRadius: "1rem",
-            padding: "0.5rem 0.8rem",
+            padding: "0.5rem 0.9rem",
             fontSize: "10px",
           }}
         >
