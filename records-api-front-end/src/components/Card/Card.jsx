@@ -15,11 +15,11 @@ const textStyling = {
   margin: "3px 0 0 5px",
 };
 
-const flexGrowName = {
+const marginAdjustmentsLarge = {
   margin: "0 10px 0 40px",
 };
 
-const flexGrowDescription = {
+const marginAdjustmentsSmall = {
   margin: "0 5px 0 5px",
 };
 
@@ -48,7 +48,7 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
           <div className="row-item-1-header" style={headerStyling}>
             NAME
           </div>
-          <div className="row-item-1" style={flexGrowName}>
+          <div className="row-item-1" style={marginAdjustmentsLarge}>
             <div style={textStyling}>{name}</div>
           </div>
         </div>
@@ -59,7 +59,7 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
           <div className="row-item-2-header" style={headerStyling}>
             DESCRIPTION
           </div>
-          <div className="row-item-2" style={flexGrowDescription}>
+          <div className="row-item-2" style={marginAdjustmentsSmall}>
             <div style={textStyling}>{description}</div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
           <div className="row-item-3-header" style={headerStyling}>
             PRICE
           </div>
-          <div className="row-item-3" style={flexGrowName}>
+          <div className="row-item-3" style={marginAdjustmentsLarge}>
             <div style={textStyling}>${price}</div>
           </div>
         </div>

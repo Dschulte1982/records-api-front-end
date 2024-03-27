@@ -17,13 +17,13 @@ export const CardLoader = () => {
     <div
       className="card-loader"
       style={{
-        height: "250px",
+        height: "270px",
         width: "233px",
         overflowY: "scroll",
         msOverflowStyle: "none",
         scrollbarWidth: "none",
         textAlign: "justify",
-        margin: "30px 0px 0px -8px",
+        margin: "20px 0px 0px -8px",
         padding: "20px",
         WebkitScrollBar: { display: "none" },
       }}
