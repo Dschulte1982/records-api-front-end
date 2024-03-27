@@ -24,7 +24,9 @@ const marginAdjustmentsSmall = {
   margin: "0 5px 0 5px",
 };
 
-export const Card = ({ record: { id, name, description, price, rating } }) => {
+export const Card = ({
+  record: { id, name, description, price, rating, image },
+}) => {
   return (
     <div
       className="card-container"
@@ -42,7 +44,20 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
         className="card-table"
         style={{ display: "flex", flexDirection: "column" }}
       >
-        <div className="card-image">Image Will Go Here</div>
+        <div
+          className="card-image"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={image}
+            alt=""
+            style={{ width: "120px", margin: "10px 0 0 0" }}
+          />
+        </div>
         <div
           className="card-row-1"
           style={{ display: "flex", flexDirection: "row", margin: "2px 0 0 0" }}
@@ -100,4 +115,5 @@ Card.propTypes = {
   description: PropTypes.string,
   price: PropTypes.string,
   rating: PropTypes.string,
+  image: PropTypes.string,
 };
