@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import StarRating from "../StarRating";
 
 const headerStyling = {
   fontFamily: "sans-serif",
@@ -41,6 +42,7 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
         className="card-table"
         style={{ display: "flex", flexDirection: "column" }}
       >
+        <div className="card-image">Image Will Go Here</div>
         <div
           className="card-row-1"
           style={{ display: "flex", flexDirection: "row", margin: "2px 0 0 0" }}
@@ -81,8 +83,10 @@ export const Card = ({ record: { id, name, description, price, rating } }) => {
           <div className="row-item-4-header" style={headerStyling}>
             RATING
           </div>
-          <div className="row-item-4" style={textStyling}>
-            {rating}
+          <div className="row-item-4" style={marginAdjustmentsLarge}>
+            <div style={{ margin: "0 0 0 -5px" }}>
+              <StarRating rating={rating} size={15} />
+            </div>
           </div>
         </div>
       </div>
