@@ -1,16 +1,15 @@
 import "./App.css";
 import ListAllRecords from "./pages/ListAllRecords/index";
-import ShowRecordScreen from "./pages/ShowRecordScreen/index";
-// import MainHeader from "./components/MainHeader";
-// import CardLoader from "./components/CardLoader";
+import AddRecordScreen from "./pages/AddRecord/index";
 import { Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div style={{ height: "440px", backgroundColor: "white" }}>
+    <div>
       <Routes>
         <Route path="/" element={<ListAllRecords />} />
-        <Route path="/show-record/id" element={<ShowRecordScreen />} />
+        <Route path="/add-record" element={<AddRecordScreen />} />
       </Routes>
     </div>
   );
