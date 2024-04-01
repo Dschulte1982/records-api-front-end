@@ -12,11 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <Provider store={store}> */}
-    <DeviceEmulator type="mobile" withDeviceSwitch>
-      <Router>
-        <App />
-      </Router>
-    </DeviceEmulator>
+    {/* <DeviceEmulator type="mobile" withDeviceSwitch> */}
+    <Router>
+      <App />
+    </Router>
+    {/* </DeviceEmulator> */}
     {/* </Provider> */}
   </React.StrictMode>
 );
