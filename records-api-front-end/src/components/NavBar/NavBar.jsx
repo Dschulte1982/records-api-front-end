@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import "./styles.css";
 
 export const NavBar = () => {
   // The breakpoint at which the Navbar will collapse
@@ -13,8 +14,10 @@ export const NavBar = () => {
   return (
     <>
       <Navbar key={expand} expand={expand} className="bg-body-tertiary-mb-3">
-        <Container fluid>
-          <Navbar.Brand href="/">Records CRUD App</Navbar.Brand>
+        <Container fluid className="bg-light">
+          <Navbar.Brand href="/" className="navbar-brand">
+            Records CRUD App
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
@@ -23,7 +26,7 @@ export const NavBar = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Add Record
+                Options
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

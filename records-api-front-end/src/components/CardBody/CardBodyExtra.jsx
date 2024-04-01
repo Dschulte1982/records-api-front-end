@@ -24,7 +24,7 @@ const marginAdjustmentsSmall = {
   margin: "0 5px 0 5px",
 };
 
-export const Card = ({
+export const CardBody = ({
   record: { id, name, description, price, rating, image },
 }) => {
   return (
@@ -109,7 +109,7 @@ export const Card = ({
   );
 };
 
-Card.propTypes = {
+CardBody.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   description: PropTypes.string,

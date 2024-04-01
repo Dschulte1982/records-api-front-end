@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "../Card/Card";
+import { CardBody } from "../CardBody/CardBody";
 import { RecordsAPI } from "../../apis/RecordsAPI";
 
 export const CardLoader = () => {
@@ -17,8 +17,8 @@ export const CardLoader = () => {
     <div
       className="card-loader"
       style={{
-        height: "270px",
-        width: "233px",
+        height: "800px",
+        width: "400px",
         overflowY: "scroll",
         msOverflowStyle: "none",
         scrollbarWidth: "none",
@@ -29,7 +29,7 @@ export const CardLoader = () => {
       }}
     >
       {recordsList.map((record) => (
-        <Card key={record.id} record={record} />
+        <CardBody key={record.id} record={record} />
       ))}
     </div>
   );
