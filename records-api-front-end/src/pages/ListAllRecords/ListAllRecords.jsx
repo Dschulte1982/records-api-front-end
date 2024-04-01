@@ -1,12 +1,10 @@
 import React from "react";
-import { MainHeader } from "../../components/MainHeader/MainHeader";
-import { CardLoader } from "../../components/CardLoader/CardLoader";
+import { MainContainer } from "../../components/MainContainer/MainContainer";
 
 export const ListAllRecords = () => {
   return (
     <div className="list-page-container">
-      <MainHeader />
-      <CardLoader />
+      <MainContainer />
     </div>
   );
 };

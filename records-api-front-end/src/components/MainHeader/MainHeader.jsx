@@ -27,6 +27,7 @@ export const MainHeader = () => {
             borderRadius: "1rem",
             padding: "0.6rem 1.2rem",
             fontSize: "11px",
+            fontFamily: "sans-serif",
           }}
         >
           New Record
