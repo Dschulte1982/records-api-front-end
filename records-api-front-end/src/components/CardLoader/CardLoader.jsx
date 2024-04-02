@@ -17,12 +17,14 @@ export const CardLoader = () => {
   });
 
   const handlePageChange = (pageNumber) => {
-    setPageState((prev) => ({
-      ...prev,
-      activePage: pageNumber,
-      max: pageNumber * 6,
-      min: pageNumber * 6 - 6,
-    }));
+    if (pageNumber > 0 && pageNumber < pageState.pages.length + 1) {
+      setPageState((prev) => ({
+        ...prev,
+        activePage: pageNumber,
+        max: pageNumber * 6,
+        min: pageNumber * 6 - 6,
+      }));
+    }
   };
 
   useEffect(() => {
@@ -43,14 +45,8 @@ export const CardLoader = () => {
     }));
   }, [pageState.min, pageState.max, recordsList]);
 
+  console.log(pageState.pages);
   return (
-    // <Row xs={1} md={2} lg={3} className="g-4">
-    //   {recordsList.map((record, idx) => (
-    //     <Col key={idx}>
-    //       <CardBody key={record.id} record={record} />
-    //     </Col>
-    //   ))}
-    // </Row>
     <div>
       <Row xs={1} md={2} lg={3} className="g-4">
         {pageState.currentData.map((record, idx) => {
@@ -63,7 +59,10 @@ export const CardLoader = () => {
       </Row>
 
       <Pagination className="px-4">
-        {/* {pageState.currentData.map((_, idx) => { */}
+        <Pagination.First onClick={() => handlePageChange(1)} />
+        <Pagination.Prev
+          onClick={() => handlePageChange(pageState.activePage - 1)}
+        />
         {pageState.pages.map((_, idx) => {
           return (
             <Pagination.Item
@@ -75,6 +74,12 @@ export const CardLoader = () => {
             </Pagination.Item>
           );
         })}
+        <Pagination.Next
+          onClick={() => handlePageChange(pageState.activePage + 1)}
+        />
+        <Pagination.Last
+          onClick={() => handlePageChange(pageState.pages.length)}
+        />
       </Pagination>
     </div>
   );
