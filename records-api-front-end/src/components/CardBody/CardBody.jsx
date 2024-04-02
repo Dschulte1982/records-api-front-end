@@ -12,7 +12,7 @@ export const CardBody = ({
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        <Card.Text>{price}</Card.Text>
+        <Card.Text>${price}</Card.Text>
         <Card.Text>
           <StarRating rating={rating} size={15} />
         </Card.Text>
