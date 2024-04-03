@@ -24,7 +24,6 @@ export const RecordsAPI = {
         ? cancelApiObject[this.getAll.name].handleRequestCancellation().signal
         : undefined,
     });
-    console.log(response);
     return response.data;
   },
 

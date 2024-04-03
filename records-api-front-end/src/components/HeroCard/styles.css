@@ -1,4 +1,13 @@
+.hero-card-container {
+  max-width: 800px;
+  margin: auto;
+}
+
 .hero-card-inner-container {
   display: flex;
   flex-direction: row;
+}
+
+.hero-card-content {
+  width: 100%;
 }
