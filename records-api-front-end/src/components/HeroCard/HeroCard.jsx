@@ -15,7 +15,7 @@ export const HeroCard = ({
             <Card.Img src={image} />
           </div>
           <div className="hero-card-content">
-            <Card.Header as={"h1"}>Featured</Card.Header>
+            <Card.Header as={"h1"}>Most Recent Addition</Card.Header>
             <Card.Body>
               <Card.Title>{name}</Card.Title>
               <Card.Text>{description}</Card.Text>

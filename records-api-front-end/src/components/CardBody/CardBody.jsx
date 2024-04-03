@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating";
 import Card from "react-bootstrap/Card";
+import "./styles.css";
 
 export const CardBody = ({
   record: { id, name, description, price, rating, image },
@@ -11,7 +12,7 @@ export const CardBody = ({
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Card.Text>{description}</Card.Text>
+        <Card.Text className="card-body-description">{description}</Card.Text>
         <Card.Text>${price}</Card.Text>
         <Card.Text>
           <StarRating rating={rating} size={15} />

@@ -1,4 +1,10 @@
 .cardloader-main-container {
-  max-width: 1200px;
+  max-width: 80%;
   margin: auto;
+}
+
+.cardloader-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
 }
