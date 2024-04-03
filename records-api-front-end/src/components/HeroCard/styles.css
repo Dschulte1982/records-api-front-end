@@ -1,0 +1,4 @@
+.hero-card-inner-container {
+  display: flex;
+  flex-direction: row;
+}
