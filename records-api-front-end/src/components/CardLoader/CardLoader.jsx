@@ -48,7 +48,7 @@ export const CardLoader = ({ recordsList }) => {
           );
         })}
       </Row>
-      <div>
+      <div className="cardloader-pagination">
         <Pagination className="px-4">
           <Pagination.First onClick={() => handlePageChange(1)} />
           <Pagination.Prev
