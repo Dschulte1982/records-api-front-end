@@ -1,0 +1,19 @@
+.detailed-card-container {
+  max-width: 80%;
+  margin: 2em auto;
+}
+
+.detailed-card-inner-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.detailed-card-content {
+  width: 100%;
+}
+
+.detailed-card-date {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+}
