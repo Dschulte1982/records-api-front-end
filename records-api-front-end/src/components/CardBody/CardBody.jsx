@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating";
 import Card from "react-bootstrap/Card";
@@ -7,8 +8,13 @@ import "./styles.css";
 export const CardBody = ({
   record: { id, name, description, price, rating, image },
 }) => {
+  const navigate = useNavigate();
+  const handleClickToShowPage = (record) => {
+    navigate(`/${id}`);
+  };
+
   return (
-    <Card>
+    <Card onClick={handleClickToShowPage}>
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

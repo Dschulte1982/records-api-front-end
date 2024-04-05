@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { RecordsAPI } from "../../apis/RecordsAPI";
+import { useLocation, useParams } from "react-router-dom";
 
 export const ShowRecord = () => {
-  return (
-    <div
-      className="card-loader"
-      style={{
-        height: "270px",
-        width: "233px",
-        overflowY: "scroll",
-        msOverflowStyle: "none",
-        scrollbarWidth: "none",
-        textAlign: "justify",
-        margin: "20px 0px 0px -8px",
-        padding: "20px",
-        WebkitScrollBar: { display: "none" },
-      }}
-    >
-      Record will go here
-    </div>
-  );
+  const [recordLoading, setRecordLoading] = useState(true);
+  const [record, setRecord] = useState([]);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    setRecordLoading(true);
+    RecordsAPI.get(id).then((record) => {
+      setRecord(record);
+      setRecordLoading(false);
+    });
+  }, [id]);
+
+  if (recordLoading) {
+    return <div>Still Loading</div>;
+  } else {
+    return (
+      <div>
+        <div>Show Record will go here</div>
+        <div>{record.name}</div>
+      </div>
+    );
+  }
 };
