@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import StarRating from "../StarRating";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 
 export const DetailedCard = ({
@@ -25,25 +26,39 @@ export const DetailedCard = ({
             <Card.Img src={image} />
           </div>
           <div className="detailed-card-content">
-            <Card.Header as={"h2"} className="text-center">
-              {name}
-            </Card.Header>
-            <Card.Body>
-              <Card.Title>${price}</Card.Title>
+            <Card.Body className="card-body">
+              <Card.Text as={"h2"}>{name}</Card.Text>
               <Card.Text>{description}</Card.Text>
+              <Card.Text>${price}</Card.Text>
               <Card.Text>
-                <StarRating rating={rating} size={50} />
+                <StarRating rating={rating} size={30} />
               </Card.Text>
-              <div className="detailed-card-date">
-                <Card.Text>Created On: {created_at}</Card.Text>
-                <Card.Text>Updated On: {updated_at}</Card.Text>
-              </div>
-              <Button variant="outline-primary">Edit Record</Button>{" "}
-              <Button variant="outline-danger">Delete Record</Button>{" "}
             </Card.Body>
           </div>
         </div>
       </Card>
+      <Card>
+        <Card.Body>
+          <Card.Text as={"h4"}>{id}</Card.Text>
+          <div className="detailed-card-date">
+            <Card.Text className="created-on">
+              <p>Created On:</p>
+              {created_at}
+            </Card.Text>
+            <Card.Text className="updated-on">
+              <p>Updated On:</p>
+              {updated_at}
+            </Card.Text>
+          </div>
+          <div className="detailed-card-button-group">
+            <Button variant="outline-primary">Edit Record</Button>{" "}
+            <Button variant="outline-danger">Delete Record</Button>{" "}
+          </div>
+          <FontAwesomeIcon icon="fa-regular fa-trash-can" />
+        </Card.Body>
+      </Card>
+      <FontAwesomeIcon icon="fa-regular fa-trash-can" />
+      <FontAwesomeIcon icon="fa-solid fa-trash-can" />
     </div>
   );
 };

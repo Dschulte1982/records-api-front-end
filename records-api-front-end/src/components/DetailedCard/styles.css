@@ -1,6 +1,8 @@
 .detailed-card-container {
-  max-width: 80%;
+  max-width: 70%;
   margin: 2em auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .detailed-card-inner-container {
@@ -9,11 +11,23 @@
 }
 
 .detailed-card-content {
-  width: 100%;
+  width: 50%;
 }
 
 .detailed-card-date {
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.detailed-card-button-group {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+}
+
+/* .updated-on {
+  margin: 0 0 0 0.5em;
+} */
+
+.card-body {
+  /* margin: 50px; */
 }

@@ -1,23 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import DeviceEmulator from "react-device-emulator";
 import "react-device-emulator/lib/styles/style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-// import store from "./redux/store";
-// import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    {/* <DeviceEmulator type="mobile" withDeviceSwitch> */}
     <Router>
       <App />
     </Router>
-    {/* </DeviceEmulator> */}
-    {/* </Provider> */}
   </React.StrictMode>
 );
 
