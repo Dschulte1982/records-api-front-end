@@ -1,19 +1,90 @@
 .detailed-card-container {
-  max-width: 80%;
-  margin: 2em auto;
-}
-
-.detailed-card-inner-container {
+  width: 70%;
+  margin: 3em auto;
   display: flex;
   flex-direction: row;
+  height: 100%;
+  padding: 2em;
+  border: 1px solid black;
 }
 
-.detailed-card-content {
-  width: 100%;
+.detailed-p-tags {
+  font-weight: bold;
 }
 
-.detailed-card-date {
+.card {
+  border-radius: 30%;
+}
+
+/* Card 1 */
+
+#detailed-card-image {
+  margin: 0 1em 0 0;
+  width: 40%;
+  height: 40%;
+}
+
+#detailed-card-1 {
+  width: 45%;
+  border: none;
+  /* border: 1px solid black; */
+}
+
+.detailed-card-body-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+#detailed-star-rating {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  /* align-items: flex-end; */
 }
+
+/* Card 2 */
+
+#detailed-card-2 {
+  width: 15%;
+  border: none;
+  /* border: 1px solid black; */
+}
+
+.detailed-card-body-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 1em;
+}
+
+/* Misc */
+.separator {
+  border: 1px solid black;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+.flex-2 {
+  flex: 2 1 auto;
+}
+.flex-3 {
+  flex: 3 1 auto;
+}
+
+/* Buttons */
+.detailed-edit-icon {
+  color: #0d6efd;
+}
+
+.detailed-delete-icon {
+  color: red;
+}
+
+/* .detailed-card-stack-2 {
+  margin: auto 0 0 0;
+} */
+
+/* .detailed-card-stack {
+  display: flex;
+  align-items: flex-end;
+  margin: auto 1em auto 0;
+} */

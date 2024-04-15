@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating";
 import Card from "react-bootstrap/Card";
+import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.css";
 
 export const DetailedCard = ({
@@ -19,30 +21,58 @@ export const DetailedCard = ({
 }) => {
   return (
     <div className="detailed-card-container">
-      <Card>
-        <div className="detailed-card-inner-container">
-          <div className="detailed-card-image">
-            <Card.Img src={image} />
+      <Card.Img id="detailed-card-image" src={image} />
+      <Card id="detailed-card-1">
+        <Card.Body className="detailed-card-body-1">
+          <Card.Text as={"h1"} className="flex-1">
+            {name}
+          </Card.Text>
+          <Card.Text className="mt-5 card-description flex-2">
+            {description}
+          </Card.Text>
+          <Card.Text as={"h4"} className="mt-5 flex-1">
+            ${price}
+          </Card.Text>
+          <div id="detailed-star-rating" className="mt-5 flex-2">
+            <StarRating rating={rating} size={30} />
           </div>
-          <div className="detailed-card-content">
-            <Card.Header as={"h2"} className="text-center">
-              {name}
-            </Card.Header>
-            <Card.Body>
-              <Card.Title>${price}</Card.Title>
-              <Card.Text>{description}</Card.Text>
-              <Card.Text>
-                <StarRating rating={rating} size={50} />
-              </Card.Text>
-              <div className="detailed-card-date">
-                <Card.Text>Created On: {created_at}</Card.Text>
-                <Card.Text>Updated On: {updated_at}</Card.Text>
-              </div>
-              <Button variant="outline-primary">Edit Record</Button>{" "}
-              <Button variant="outline-danger">Delete Record</Button>{" "}
-            </Card.Body>
+        </Card.Body>
+      </Card>
+      <div className="separator"></div>
+      <Card id="detailed-card-2">
+        <Card.Body className="detailed-card-body-2">
+          <Card.Text as={"h3"} className="flex-1">
+            {id}
+          </Card.Text>
+          <div className="detailed-card-date flex-3 mt-5">
+            <Card.Text className="created-on">
+              <p className="detailed-p-tags">Created On:</p>
+              {created_at}
+            </Card.Text>
+            <Card.Text className="updated-on">
+              <p className="detailed-p-tags">Updated On:</p>
+              {updated_at}
+            </Card.Text>
           </div>
-        </div>
+          <Stack
+            direction="horizontal"
+            gap={2}
+            className="detailed-card-stack-2 flex-2"
+          >
+            <FontAwesomeIcon
+              className="detailed-edit-icon ms-auto"
+              icon="fa-regular fa-pen-to-square"
+              size="2x"
+              fixedWidth
+            />
+            <FontAwesomeIcon
+              className="detailed-delete-icon"
+              icon="fa-regular fa-trash-can"
+              size="2x"
+              fixedWidth
+            />
+          </Stack>
+        </Card.Body>
       </Card>
     </div>
   );
