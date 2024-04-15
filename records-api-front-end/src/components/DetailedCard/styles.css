@@ -1,33 +1,90 @@
 .detailed-card-container {
-  max-width: 70%;
-  margin: 2em auto;
+  width: 70%;
+  margin: 3em auto;
   display: flex;
   flex-direction: row;
+  height: 100%;
+  padding: 2em;
+  border: 1px solid black;
 }
 
-.detailed-card-inner-container {
+.detailed-p-tags {
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 30%;
+}
+
+/* Card 1 */
+
+#detailed-card-image {
+  margin: 0 1em 0 0;
+  width: 40%;
+  height: 40%;
+}
+
+#detailed-card-1 {
+  width: 45%;
+  border: none;
+  /* border: 1px solid black; */
+}
+
+.detailed-card-body-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+#detailed-star-rating {
   display: flex;
   flex-direction: row;
+  /* align-items: flex-end; */
 }
 
-.detailed-card-content {
-  width: 50%;
+/* Card 2 */
+
+#detailed-card-2 {
+  width: 15%;
+  border: none;
+  /* border: 1px solid black; */
 }
 
-.detailed-card-date {
-  /* display: flex;
-  flex-direction: row; */
-}
-
-.detailed-card-button-group {
+.detailed-card-body-2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 0 0 0 1em;
 }
 
-/* .updated-on {
-  margin: 0 0 0 0.5em;
+/* Misc */
+.separator {
+  border: 1px solid black;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+.flex-2 {
+  flex: 2 1 auto;
+}
+.flex-3 {
+  flex: 3 1 auto;
+}
+
+/* Buttons */
+.detailed-edit-icon {
+  color: #0d6efd;
+}
+
+.detailed-delete-icon {
+  color: red;
+}
+
+/* .detailed-card-stack-2 {
+  margin: auto 0 0 0;
 } */
 
-.card-body {
-  /* margin: 50px; */
-}
+/* .detailed-card-stack {
+  display: flex;
+  align-items: flex-end;
+  margin: auto 1em auto 0;
+} */

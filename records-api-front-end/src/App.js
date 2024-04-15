@@ -5,20 +5,11 @@ import ShowRecordScreen from "./pages/ShowRecordScreen/index";
 import { Routes, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faFontAwesome } from "@fortawesome/free-brands-svg-icons";
-// import { faHatCowboy } from "@fortawesome/pro-thin-svg-icons";
-// import { faHatChef } from "@fortawesome/sharp-solid-svg-icons";
-// import { faPlateUtensils } from "@fortawesome/sharp-regular-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-library.add(
-  fas,
-  faTwitter,
-  faFontAwesome
-  // faHatCowboy,
-  // faHatChef,
-  // faPlateUtensils
-);
+library.add(fas, far, faFontAwesome);
 
 function App() {
   return (
