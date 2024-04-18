@@ -31,7 +31,7 @@ export const DetailedCard = ({
             <Card.Text className="detailed-card-description flex-3">
               {description}
             </Card.Text>
-            <Card.Text as={"h4"} className="detailed-card-price flex-1">
+            <Card.Text as={"h2"} className="detailed-card-price flex-1">
               ${price}
             </Card.Text>
             <div id="detailed-star-rating" className="flex-2">
@@ -43,7 +43,7 @@ export const DetailedCard = ({
         <Card id="detailed-card-2">
           <Card.Body className="detailed-card-body-2">
             <div className="detailed-id-and-dates">
-              <Card.Text as={"h4"} className="flex-1" id="detailed-card-2-id">
+              <Card.Text as={"h3"} className="flex-1" id="detailed-card-2-id">
                 ID: {id}
               </Card.Text>
               <Card.Text id="created-on" className="created-on flex-2">
