@@ -20,11 +20,9 @@
 
 /* Card 1 */
 
-/* #detailed-card-image {
-  margin: 0 1em 0 0;
-  width: 40%;
-  height: 40%;
-} */
+#detailed-card-image {
+  border-radius: 16px;
+}
 
 /* #detailed-card-1 {
   width: 45%;
@@ -60,7 +58,9 @@
 
 /* Misc */
 .separator {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* width: 90%; */
+  margin: 0 auto;
 }
 
 .flex-1 {
@@ -77,6 +77,11 @@
 }
 
 /* Buttons */
+
+#detailed-card-stack {
+  transform: scale(0.8);
+}
+
 .detailed-edit-icon {
   color: #0d6efd;
 }
@@ -96,14 +101,11 @@
     padding: 30px;
     border: 1px solid #fbfbfc;
     border-radius: 20px;
-    box-shadow: 0 0 8px 1px rgba(43, 37, 37, 30%);
+    box-shadow: 0 0 8px 1px rgba(43, 37, 37, 20%);
   }
 
   #detailed-card-image {
     width: 100%;
-    border-radius: 16px;
-    /* border-top-left-radius: 16px;
-    border-top-right-radius: 16px; */
   }
 
   .tablet-view {
@@ -120,7 +122,7 @@
   #detailed-card-2 {
     display: flex;
     border: none;
-    margin: 30px 0 0 20px;
+    margin: 20px 0 0 20px;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
     border-bottom-right-radius: 16px;
@@ -138,35 +140,30 @@
     margin: 0;
   }
 
+  .separator {
+    width: 90%;
+  }
+
   .detailed-card-description {
-    margin: 20px 0 50px 0;
+    margin: 10px 0 30px 0;
   }
 
   .detailed-card-price {
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
   }
 
   #detailed-star-rating {
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 0;
   }
-
-  /* .detailed-id-and-dates {
-    display: flex;
-    flex-direction: row;
-  } */
 
   .detailed-card-body-2 {
     flex-direction: row;
     width: 100%;
   }
 
-  #detailed-card-2-id {
-    /* align-self: center; */
-    /* margin: 0 30px 0; */
-  }
-
   #detailed-card-stack {
     align-items: flex-end;
+    align-self: flex-end;
     justify-content: flex-end;
   }
 }
@@ -174,7 +171,7 @@
 /* Tablet */
 @media only screen and (min-width: 576px) {
   .detailed-card-container {
-    background-color: red;
+    /* background-color: red; */
     width: 80%;
     max-width: 600px;
     margin: 3em auto;
@@ -182,8 +179,6 @@
     border: 1px solid #fbfbfc;
     border-radius: 20px;
     box-shadow: 0 0 8px 1px;
-    /* display: flex;
-    flex-direction: column; */
   }
 
   .tablet-view {
@@ -192,19 +187,21 @@
   }
 
   #detailed-card-image {
-    /* margin: 0 1em 0 0; */
-    /* width: 80%; */
-    /* height: 40%; */
+    margin: 0 0 30px 0;
   }
 
   #detailed-card-1 {
-    border-radius: 0%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
     width: 60%;
+    border: none;
   }
 
   #detailed-card-2 {
-    border-radius: 0%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
     width: 40%;
+    border: none;
   }
 }
 
