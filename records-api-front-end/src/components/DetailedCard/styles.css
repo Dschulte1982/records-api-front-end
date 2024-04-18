@@ -1,14 +1,14 @@
-/* .detailed-card-container {
-  width: 70%;
+.detailed-card-container {
+  /* width: 70%;
   margin: 3em auto;
   display: flex;
   flex-direction: row;
   height: 100%;
-  padding: 2em;
+  padding: 2em; */
   border: 1px solid #fbfbfc;
   border-radius: 20px;
-  box-shadow: 0 0 8px 1px;
-} */
+  box-shadow: 0 0 8px 1px rgba(43, 37, 37, 20%);
+}
 
 .detailed-p-tags {
   font-weight: bold;
@@ -49,17 +49,11 @@
 .detailed-card-body-2 {
   display: flex;
   flex-direction: column;
-  /* margin: 0 0 0 1em; */
-}
-
-.created-on {
-  /* margin: 0.5em 0 0 0; */
 }
 
 /* Misc */
 .separator {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  /* width: 90%; */
   margin: 0 auto;
 }
 
@@ -93,11 +87,10 @@
 /* Mobile */
 @media only screen and (max-width: 575.99px) {
   .detailed-card-container {
-    /* background-color: green; */
     display: flex;
     flex-direction: column;
-    margin: 2em auto;
     width: 90%;
+    margin: 2em auto;
     padding: 30px;
     border: 1px solid #fbfbfc;
     border-radius: 20px;
@@ -171,14 +164,11 @@
 /* Tablet */
 @media only screen and (min-width: 576px) {
   .detailed-card-container {
-    /* background-color: red; */
     width: 80%;
-    max-width: 600px;
+    /* max-width: 700px; */
     margin: 3em auto;
-    padding: 2em;
-    border: 1px solid #fbfbfc;
-    border-radius: 20px;
-    box-shadow: 0 0 8px 1px;
+    /* padding: 2em; */
+    padding: 30px;
   }
 
   .tablet-view {
@@ -194,6 +184,7 @@
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
     width: 60%;
+    margin: 0 20px 0 0;
     border: none;
   }
 
@@ -201,7 +192,56 @@
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
     width: 40%;
+    margin: 0 0 0 20px;
     border: none;
+  }
+
+  #detailed-card-stack {
+    align-items: flex-end;
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+
+  .updated-on,
+  .created-on {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #updated-on,
+  #created-on {
+    margin: 10px 0 0 0;
+  }
+
+  .created-on-div,
+  .updated-on-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailed-card-description {
+    margin: 10px 0 30px 0;
+  }
+
+  .detailed-card-price {
+    margin: 0 0 10px 0;
+  }
+
+  #detailed-star-rating {
+    margin: 0 0 0 0;
+  }
+
+  .flex-1 {
+    /* flex: 3 1 ; */
+  }
+  .flex-2 {
+    /* flex: 1 1 auto; */
+  }
+  .flex-3 {
+    /* flex: 1 1 auto; */
+  }
+  .flex-4 {
+    /* flex: 4 1 auto; */
   }
 }
 

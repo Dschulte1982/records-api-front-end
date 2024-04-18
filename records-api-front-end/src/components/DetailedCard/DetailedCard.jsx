@@ -47,12 +47,12 @@ export const DetailedCard = ({
                 ID: {id}
               </Card.Text>
               <Card.Text id="created-on" className="created-on flex-2">
-                <div className="">
+                <div className="created-on-div">
                   <b>Created On:</b> {created_at}
                 </div>
               </Card.Text>
               <Card.Text id="updated-on" className="updated-on flex-2">
-                <div className="">
+                <div className="updated-on-div">
                   <b>Updated On:</b> {updated_at}
                 </div>
               </Card.Text>
@@ -64,7 +64,6 @@ export const DetailedCard = ({
               className=" flex-2"
             >
               <FontAwesomeIcon
-                // className="detailed-edit-icon ms-auto"
                 className="detailed-edit-icon"
                 icon="fa-regular fa-pen-to-square"
                 size="2x"
