@@ -37,6 +37,16 @@ export const RecordsAPI = {
         : undefined,
     });
   },
+
+  delete: async function (id, cancel = false) {
+    await api.request({
+      url: `/records/${id}`,
+      method: "DELETE",
+      signal: cancel
+        ? cancelApiObject[this.create.name].handleRequestCancellation().signal
+        : undefined,
+    });
+  },
 };
 
 // Define the cancel API object for RecordsAPI
