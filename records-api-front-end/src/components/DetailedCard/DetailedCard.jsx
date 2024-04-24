@@ -55,7 +55,7 @@ export const DetailedCard = ({
                 </div>
               </Card.Text>
             </div>
-            <CRUDButtons id={id} />
+            <CRUDButtons id={id} name={name} />
           </Card.Body>
         </Card>
       </div>
