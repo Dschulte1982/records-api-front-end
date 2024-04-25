@@ -6,6 +6,13 @@
   box-shadow: 0 0 8px 1px rgba(43, 37, 37, 20%);
 }
 
+.card-1-id {
+  font-size: 2.125rem;
+  line-height: 1;
+  font-weight: 600;
+  justify-items: flex-start;
+}
+
 .detailed-p-tags {
   font-weight: bold;
 }
@@ -22,7 +29,7 @@
 }
 
 #detailed-card-1 {
-  width: 45%;
+  width: 25%;
   border: none;
 }
 
@@ -252,11 +259,15 @@
     width: 75%;
   }
 
-  #detailed-card-image {
+  .tablet-view {
+    width: 100%;
+  }
+
+  /* #detailed-card-image {
     margin: 0 2.5rem 0 0;
     width: 10%;
     height: 40%;
-  }
+  } */
 
   #detailed-card-1 {
     width: 55%;
@@ -275,6 +286,6 @@
   }
 
   #detailed-card-2 {
-    flex: 2 1 auto;
+    flex: 1 1 auto;
   }
 }

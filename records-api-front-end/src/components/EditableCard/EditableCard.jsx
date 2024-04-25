@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating";
 import { CRUDButtons } from "../CRUDButtons/CRUDButtons";
@@ -17,21 +17,45 @@ export const EditableCard = ({
     updated_at,
   },
 }) => {
+  const [values, setValues] = useState({
+    name: name,
+    description: description,
+    price: price,
+  });
+
+  const onChangeHandler = (attribute) => {
+    return (event) => {
+      setValues({ ...values, [attribute]: event.target.value });
+    };
+  };
+
   return (
     <div className="detailed-card-container">
       <Card.Img id="detailed-card-image" src={image} />
       <div className="tablet-view">
         <Card id="detailed-card-1">
           <Card.Body className="detailed-card-body-1">
-            <Card.Text as={"h1"} className="flex-1">
-              {name} - Edit
-            </Card.Text>
-            <Card.Text className="detailed-card-description flex-3">
-              {description}
-            </Card.Text>
-            <Card.Text as={"h2"} className="detailed-card-price flex-1">
-              ${price}
-            </Card.Text>
+            <Card.Text
+              as={"input"}
+              type="text"
+              className="flex-1 card-1-id"
+              value={values.name}
+              onChange={onChangeHandler("name")}
+            ></Card.Text>
+            <Card.Text
+              as={"input"}
+              type="text"
+              className="detailed-card-description flex-3"
+              value={values.description}
+              onChange={onChangeHandler("description")}
+            ></Card.Text>
+            <Card.Text
+              as={"input"}
+              type="number"
+              className="detailed-card-price flex-1"
+              value={values.price}
+              onChange={onChangeHandler("price")}
+            ></Card.Text>
             <div id="detailed-star-rating" className="flex-2">
               <StarRating rating={rating} size={30} />
             </div>
