@@ -1,0 +1,280 @@
+.detailed-card-container {
+  margin: 3em auto;
+  display: flex;
+  border: 1px solid #fbfbfc;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 1px rgba(43, 37, 37, 20%);
+}
+
+.detailed-p-tags {
+  font-weight: bold;
+}
+
+.updated-on,
+.created-on {
+  display: flex;
+}
+
+/* Card 1 */
+
+#detailed-card-image {
+  border-radius: 16px;
+}
+
+#detailed-card-1 {
+  width: 45%;
+  border: none;
+}
+
+.detailed-card-body-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+#detailed-star-rating {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Card 2 */
+
+#detailed-card-2 {
+  width: 15%;
+  border: none;
+}
+
+.detailed-card-body-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Misc */
+.separator {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+.flex-2 {
+  flex: 2 1 auto;
+}
+.flex-3 {
+  flex: 3 1 auto;
+}
+.flex-4 {
+  flex: 4 1 auto;
+}
+
+/* Mobile */
+/* @media only screen and (max-width: 575.99px) { */
+@media only screen and (max-width: 767.99px) {
+  .detailed-card-container {
+    flex-direction: column;
+    width: 90%;
+    margin: 2em auto;
+    padding: 30px;
+  }
+
+  #detailed-card-image {
+    width: 100%;
+  }
+
+  .tablet-view {
+    border-radius: 20px;
+  }
+
+  #detailed-card-1 {
+    width: 100%;
+    margin: 30px 0 0 20px;
+  }
+
+  #detailed-card-2 {
+    width: 100%;
+    margin: 20px 0 0 20px;
+  }
+
+  .updated-on,
+  .created-on {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #updated-on,
+  #created-on {
+    margin: 0;
+  }
+
+  .separator {
+    width: 90%;
+  }
+
+  .detailed-card-description {
+    margin: 10px 0 30px 0;
+  }
+
+  .detailed-card-price {
+    margin: 0 0 10px 0;
+  }
+
+  #detailed-star-rating {
+    margin: 0 0 20px 0;
+  }
+
+  .detailed-card-body-2 {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/* Tablet */
+/* @media only screen and (min-width: 576px) { */
+@media only screen and (min-width: 768px) {
+  .detailed-card-container {
+    flex-direction: column;
+    width: 80%;
+    margin: 3em auto;
+    padding: 30px;
+  }
+
+  .tablet-view {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #detailed-card-image {
+    margin: 0 0 30px 0;
+  }
+
+  #detailed-card-1 {
+    width: 60%;
+    margin: 0 20px 0 0;
+  }
+
+  #detailed-card-2 {
+    width: 40%;
+    margin: 0 0 0 20px;
+  }
+
+  .updated-on,
+  .created-on {
+    flex-direction: column;
+  }
+
+  #updated-on,
+  #created-on {
+    margin: 10px 0 0 0;
+  }
+
+  .created-on-div,
+  .updated-on-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailed-card-description {
+    margin: 10px 0 30px 0;
+  }
+
+  .detailed-card-price {
+    margin: 0 0 10px 0;
+  }
+
+  #detailed-star-rating {
+    margin: 0 0 0 0;
+  }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+  .detailed-card-container {
+    width: 90%;
+    margin: 3em auto;
+    flex-direction: row;
+    padding: 2.5rem;
+  }
+
+  .tablet-view {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #detailed-card-image {
+    margin: 0 2.5rem 0 0;
+    width: 40%;
+    height: 40%;
+  }
+
+  #detailed-card-1 {
+    width: 45%;
+  }
+
+  #detailed-card-2 {
+    width: 15%;
+  }
+
+  #detailed-card-image {
+    flex: 2 1 auto;
+  }
+
+  #detailed-card-1 {
+    flex: 1 1 auto;
+  }
+
+  #detailed-card-2 {
+    flex: 1 1 auto;
+  }
+
+  #created-on {
+    margin: 2em 0 0 0;
+  }
+}
+
+/* Desktop */
+/* @media only screen and (min-width: 1376px) { */
+@media only screen and (min-width: 1200px) {
+  .detailed-card-container {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1590px) {
+  .detailed-card-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1810px) {
+  .detailed-card-container {
+    width: 75%;
+  }
+
+  #detailed-card-image {
+    margin: 0 2.5rem 0 0;
+    width: 10%;
+    height: 40%;
+  }
+
+  #detailed-card-1 {
+    width: 55%;
+  }
+
+  #detailed-card-2 {
+    width: 25%;
+  }
+
+  #detailed-card-image {
+    flex: 1 1 auto;
+  }
+
+  #detailed-card-1 {
+    flex: 2 1 auto;
+  }
+
+  #detailed-card-2 {
+    flex: 2 1 auto;
+  }
+}

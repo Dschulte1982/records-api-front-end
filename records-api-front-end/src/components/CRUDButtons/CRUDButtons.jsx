@@ -17,7 +17,7 @@ export const CRUDButtons = ({ id, name }) => {
   const navigate = useNavigate();
 
   const handleEditClick = () => {
-    navigate(`/${id}`);
+    navigate(`/${id}/edit`, { state: { action: "edit" } });
   };
 
   const handleDeleteClick = (id) => {
@@ -67,5 +67,5 @@ export const CRUDButtons = ({ id, name }) => {
 };
 
 CRUDButtons.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
 };

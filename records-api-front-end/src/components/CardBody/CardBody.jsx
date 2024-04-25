@@ -10,7 +10,7 @@ export const CardBody = ({
 }) => {
   const navigate = useNavigate();
   const handleClickToShowPage = (record) => {
-    navigate(`/${id}`);
+    navigate(`/${id}`, { state: { action: "show" } });
   };
 
   return (
