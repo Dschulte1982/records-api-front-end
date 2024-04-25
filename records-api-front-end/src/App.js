@@ -2,6 +2,7 @@ import "./App.css";
 import ListAllRecords from "./pages/ListAllRecords/index";
 import AddRecordScreen from "./pages/AddRecord/index";
 import ShowRecordScreen from "./pages/ShowRecordScreen/index";
+import { EditRecordScreen } from "./pages/EditRecord/EditRecordScreen";
 import { Routes, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ListAllRecords />} />
         <Route path="/:id" element={<ShowRecordScreen />} />
+        <Route path="/:id/edit" element={<EditRecordScreen />} />
         <Route path="/add-record" element={<AddRecordScreen />} />
       </Routes>
     </div>

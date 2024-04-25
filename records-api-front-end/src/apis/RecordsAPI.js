@@ -38,6 +38,17 @@ export const RecordsAPI = {
     });
   },
 
+  update: async function (record, cancel = false) {
+    await api.request({
+      url: `/records/${record.id}`,
+      method: "PUT",
+      data: record,
+      signal: cancel
+        ? cancelApiObject[this.create.name].handleRequestCancellation().signal
+        : undefined,
+    });
+  },
+
   delete: async function (id, cancel = false) {
     await api.request({
       url: `/records/${id}`,
