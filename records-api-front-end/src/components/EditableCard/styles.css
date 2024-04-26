@@ -38,6 +38,30 @@
   flex-direction: column;
 }
 
+.card-1-id {
+  display: flex;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 600;
+  text-align: start;
+  /* border: none; */
+  /* border-bottom: 1px solid black; */
+  justify-content: center;
+  padding: 0 0 20px 0;
+}
+
+.edit-card-description {
+  /* border: none; */
+  /* border-bottom: 1px solid black; */
+}
+
+.detailed-card-price {
+  font-size: 2.125rem;
+  line-height: 1;
+  font-weight: 600;
+  border: none;
+}
+
 #detailed-star-rating {
   display: flex;
   flex-direction: row;

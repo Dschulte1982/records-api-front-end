@@ -43,9 +43,9 @@ export const EditableCard = ({
               onChange={onChangeHandler("name")}
             ></Card.Text>
             <Card.Text
-              as={"input"}
+              as={"textarea"}
               type="text"
-              className="detailed-card-description flex-3"
+              className="edit-card-description flex-3"
               value={values.description}
               onChange={onChangeHandler("description")}
             ></Card.Text>
