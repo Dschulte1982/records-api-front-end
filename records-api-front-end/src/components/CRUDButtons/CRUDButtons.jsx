@@ -17,10 +17,13 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
     name: record.name,
     description: record.description,
     price: record.price,
+    image: record.image,
+    rating: record.rating,
   });
 
   const onChangeHandler = (attribute) => {
     return (event) => {
+      console.log(event.target.value);
       setValues({ ...values, [attribute]: event.target.value });
     };
   };
@@ -105,6 +108,40 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                 value={values.price}
                 onChange={onChangeHandler("price")}
               />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="addForm.ControlImageInput">
+              <Form.Label>Image</Form.Label>
+              <Form.Select
+                aria-label="add-form-image-select"
+                value={values.image}
+                onChange={onChangeHandler("image")}
+              >
+                <option>Open this select menu</option>
+                <option value="https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=OptionOne">
+                  One
+                </option>
+                <option value="https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=OptionTwo">
+                  Two
+                </option>
+                <option value="https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=OptionThree">
+                  Three
+                </option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="addForm.ControlRatingInput">
+              <Form.Label>Rating</Form.Label>
+              <Form.Select
+                aria-label="add-form-image-select"
+                value={values.rating}
+                onChange={onChangeHandler("rating")}
+              >
+                <option>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+              </Form.Select>
             </Form.Group>
           </Form>
         </Modal.Body>
