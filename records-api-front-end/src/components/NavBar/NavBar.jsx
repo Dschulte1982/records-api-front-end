@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { AddItem } from "../../AddItem/AddItem";
 import "./styles.css";
 
 export const NavBar = () => {
@@ -31,7 +32,9 @@ export const NavBar = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/add-record">Add Record</Nav.Link>
+                <Nav.Link>
+                  <AddItem />
+                </Nav.Link>
               </Nav>
               <Form className="d-flex">
                 <Form.Control
