@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
@@ -98,7 +98,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                 onChange={onChangeHandler("description")}
               />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="mb-3" controlId="editForm.ControlPriceInput">
               <Form.Label>Price</Form.Label>
               <Form.Control
                 type="number"
@@ -136,6 +136,6 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
   );
 };
 
-// CRUDButtons.propTypes = {
-//   id: PropTypes.number,
-// };
+CRUDButtons.propTypes = {
+  record: PropTypes.object,
+};

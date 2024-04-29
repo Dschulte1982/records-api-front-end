@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating";
 import { CRUDButtons } from "../CRUDButtons/CRUDButtons";
 import Card from "react-bootstrap/Card";
 import "./styles.css";
 
-// export const DetailedCard = ({
-//   record: {
-//     id,
-//     name,
-//     description,
-//     price,
-//     rating,
-//     image,
-//     created_at,
-//     updated_at,
-//   },
-// }) => {
 export const DetailedCard = ({ record }) => {
   const [recordDetails, setRecordDetails] = useState(record);
-
-  useEffect(() => {}, []);
 
   return (
     <div className="detailed-card-container">
@@ -68,15 +54,6 @@ export const DetailedCard = ({ record }) => {
   );
 };
 
-// DetailedCard.propTypes = {
-//   record: {
-//     id: PropTypes.string,
-//     name: PropTypes.string,
-//     description: PropTypes.string,
-//     price: PropTypes.string,
-//     rating: PropTypes.string,
-//     image: PropTypes.string,
-//     created_at: PropTypes.string,
-//     updated_at: PropTypes.string,
-//   },
-// };
+DetailedCard.propTypes = {
+  record: PropTypes.object,
+};
