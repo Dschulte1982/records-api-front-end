@@ -23,7 +23,6 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
 
   const onChangeHandler = (attribute) => {
     return (event) => {
-      console.log(event.target.value);
       setValues({ ...values, [attribute]: event.target.value });
     };
   };

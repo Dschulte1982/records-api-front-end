@@ -3,15 +3,16 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import StarRating from "../StarRating";
 import { RecordsAPI } from "../../apis/RecordsAPI";
 
 export const AddItem = () => {
   const [showAdd, setShowAdd] = useState(false);
   const [addValues, setAddValues] = useState({
-    name: "Test 3",
+    name: "",
     description: "",
     price: "",
-    rating: "",
+    rating: "0",
     image: "",
   });
 
@@ -39,6 +40,7 @@ export const AddItem = () => {
   const handleAddClick = () => {
     RecordsAPI.create(addValues).then(() => {
       setShowAdd(false);
+      navigate("/");
     });
   };
 
@@ -106,18 +108,12 @@ export const AddItem = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="addForm.ControlRatingInput">
               <Form.Label>Rating</Form.Label>
-              <Form.Select
-                aria-label="add-form-image-select"
+              <StarRating
                 value={addValues.rating}
+                size={30}
+                active={true}
                 onChange={onChangeAddHandler("rating")}
-              >
-                <option disabled>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                <option value="4">Four</option>
-                <option value="5">Five</option>
-              </Form.Select>
+              />
             </Form.Group>
           </Form>
         </Modal.Body>

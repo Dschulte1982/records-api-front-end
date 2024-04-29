@@ -24,7 +24,7 @@ export const DetailedCard = ({ record }) => {
               ${recordDetails.price}
             </Card.Text>
             <div id="detailed-star-rating" className="flex-2">
-              <StarRating rating={recordDetails.rating} size={30} />
+              <StarRating value={recordDetails.rating} size={30} />
             </div>
           </Card.Body>
         </Card>
