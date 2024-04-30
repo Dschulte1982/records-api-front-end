@@ -19,12 +19,9 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
     description: record.description,
     price: record.price,
     image: record.image,
-    // rating: record.rating,
   });
 
-  const [rating, setRating] = useState({
-    rating: record.rating,
-  });
+  const [rating, setRating] = useState(record.rating);
 
   const onChangeHandler = (attribute) => {
     return (event) => {
@@ -44,7 +41,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
 
   const handleEditClick = () => {
     RecordsAPI.update({ ...values, rating }).then(() => {
-      setRecordDetails(values);
+      setRecordDetails({ ...values, rating });
       setShowEdit(false);
     });
   };
@@ -138,7 +135,6 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                 rating={rating}
                 size={30}
                 active={true}
-                values={values}
                 setRating={setRating}
               />
             </Form.Group>
