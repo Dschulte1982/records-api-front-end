@@ -16,7 +16,6 @@ export const StarRating = ({ rating, size, active, setRating }) => {
       <div>
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
-          console.log(i);
           return (
             <IoMdStar
               key={i}

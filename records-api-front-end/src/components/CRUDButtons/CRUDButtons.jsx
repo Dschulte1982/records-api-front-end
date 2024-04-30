@@ -22,6 +22,8 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
   });
 
   const [rating, setRating] = useState(record.rating);
+  const [showEditConfirmation, setShowEditConfirmation] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   const onChangeHandler = (attribute) => {
     return (event) => {
@@ -32,6 +34,13 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
   const handleClose = () => {
     setShowEdit(false);
     setShowDelete(false);
+    setShowEditConfirmation(false);
+    setShowDeleteConfirmation(false);
+  };
+
+  const handleDeleteClose = () => {
+    setShowDeleteConfirmation(false);
+    navigate(`/`);
   };
 
   const handleShowEdit = () => setShowEdit(true);
@@ -43,13 +52,14 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
     RecordsAPI.update({ ...values, rating }).then(() => {
       setRecordDetails({ ...values, rating });
       setShowEdit(false);
+      setShowEditConfirmation(true);
     });
   };
 
   const handleDeleteClick = (id) => {
     RecordsAPI.delete(id).then(() => {
       setShowDelete(false);
-      navigate(`/`);
+      setShowDeleteConfirmation(true);
     });
   };
 
@@ -161,6 +171,26 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
           </Button>
           <Button variant="danger" onClick={() => handleDeleteClick(record.id)}>
             Confirm Deletion
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {/* Edit Confirmation Modal */}
+      <Modal show={showEditConfirmation} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>Item has been successfully edited!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {/* Delete Confirmation Modal */}
+      <Modal show={showDeleteConfirmation} onHide={handleDeleteClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>Item has been successfully deleted!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleDeleteClose}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
