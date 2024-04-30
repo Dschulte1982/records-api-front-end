@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { IoMdStar } from "react-icons/io";
 
-export const StarRating = ({ value, size, active, setAddValues }) => {
-  const [rating, setRating] = useState(null);
+export const StarRating = ({ rating, size, active, setRating }) => {
+  // const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
+
+  const handleAddClick = (ratingValue) => {
+    setRating(ratingValue);
+  };
 
   // https://codesandbox.io/p/sandbox/react-five-star-rating-9dwks?file=%2Fsrc%2FStarRating.js%3A25%2C70-25%2C77
 
@@ -22,7 +26,8 @@ export const StarRating = ({ value, size, active, setAddValues }) => {
               className="star"
               size={size}
               color={ratingValue <= (hover || rating) ? "#FBBC04" : "#e4e5e9"}
-              onClick={() => setRating(ratingValue)}
+              // onClick={() => setRating(ratingValue)}
+              onClick={() => handleAddClick(ratingValue)}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}
             />
@@ -41,7 +46,7 @@ export const StarRating = ({ value, size, active, setAddValues }) => {
                 key={i}
                 className="star"
                 size={size}
-                color={ratingValue <= value ? "#FBBC04" : "#e4e5e9"}
+                color={ratingValue <= rating ? "#FBBC04" : "#e4e5e9"}
               />
             </label>
           );
@@ -52,6 +57,6 @@ export const StarRating = ({ value, size, active, setAddValues }) => {
 };
 
 StarRating.propTypes = {
-  rating: PropTypes.number,
+  rating: PropTypes.object,
   size: PropTypes.number,
 };

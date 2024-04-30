@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import StarRating from "../StarRating";
 import { RecordsAPI } from "../../apis/RecordsAPI";
 import "./styles.css";
 
@@ -18,6 +19,10 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
     description: record.description,
     price: record.price,
     image: record.image,
+    // rating: record.rating,
+  });
+
+  const [rating, setRating] = useState({
     rating: record.rating,
   });
 
@@ -38,7 +43,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
   const navigate = useNavigate();
 
   const handleEditClick = () => {
-    RecordsAPI.update(values).then(() => {
+    RecordsAPI.update({ ...values, rating }).then(() => {
       setRecordDetails(values);
       setShowEdit(false);
     });
@@ -129,18 +134,13 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="addForm.ControlRatingInput">
               <Form.Label>Rating</Form.Label>
-              <Form.Select
-                aria-label="add-form-image-select"
-                value={values.rating}
-                onChange={onChangeHandler("rating")}
-              >
-                <option>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                <option value="4">Four</option>
-                <option value="5">Five</option>
-              </Form.Select>
+              <StarRating
+                rating={rating}
+                size={30}
+                active={true}
+                values={values}
+                setRating={setRating}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>
