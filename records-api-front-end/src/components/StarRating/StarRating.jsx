@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { IoMdStar } from "react-icons/io";
 
 export const StarRating = ({ rating, size, active, setRating }) => {
-  // const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
   const handleAddClick = (ratingValue) => {
@@ -26,7 +25,6 @@ export const StarRating = ({ rating, size, active, setRating }) => {
               className="star"
               size={size}
               color={ratingValue <= (hover || rating) ? "#FBBC04" : "#e4e5e9"}
-              // onClick={() => setRating(ratingValue)}
               onClick={() => handleAddClick(ratingValue)}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}

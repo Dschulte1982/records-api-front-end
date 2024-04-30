@@ -12,9 +12,10 @@ export const AddItem = () => {
     name: "",
     description: "",
     price: "",
-    rating: "0",
     image: "",
   });
+
+  const [rating, setRating] = useState();
 
   const handleKeyDown = (e) => {
     if (e.key === " ") {
@@ -24,7 +25,6 @@ export const AddItem = () => {
 
   const onChangeAddHandler = (attribute) => {
     return (event) => {
-      console.log(event.target.value);
       setAddValues({ ...addValues, [attribute]: event.target.value });
     };
   };
@@ -38,9 +38,8 @@ export const AddItem = () => {
   const navigate = useNavigate();
 
   const handleAddClick = () => {
-    RecordsAPI.create(addValues).then(() => {
+    RecordsAPI.create({ ...addValues, rating }).then(() => {
       setShowAdd(false);
-      navigate("/");
     });
   };
 
@@ -109,10 +108,10 @@ export const AddItem = () => {
             <Form.Group className="mb-3" controlId="addForm.ControlRatingInput">
               <Form.Label>Rating</Form.Label>
               <StarRating
-                value={addValues.rating}
+                rating={rating}
                 size={30}
                 active={true}
-                onChange={onChangeAddHandler("rating")}
+                setRating={setRating}
               />
             </Form.Group>
           </Form>
