@@ -28,7 +28,8 @@ export const RecordsAPI = {
   },
 
   create: async function (record, cancel = false) {
-    await api.request({
+    const response = await api.request({
+      // await api.request({
       url: "/records",
       method: "POST",
       data: record,
@@ -36,6 +37,7 @@ export const RecordsAPI = {
         ? cancelApiObject[this.create.name].handleRequestCancellation().signal
         : undefined,
     });
+    return response.data;
   },
 
   update: async function (record, cancel = false) {

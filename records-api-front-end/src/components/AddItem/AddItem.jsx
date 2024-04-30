@@ -8,7 +8,9 @@ import { RecordsAPI } from "../../apis/RecordsAPI";
 
 export const AddItem = () => {
   const [showAdd, setShowAdd] = useState(false);
+  const [showAddConfirmation, setShowAddConfirmation] = useState(false);
   const [addValues, setAddValues] = useState({
+    id: "",
     name: "",
     description: "",
     price: "",
@@ -31,6 +33,7 @@ export const AddItem = () => {
 
   const handleClose = () => {
     setShowAdd(false);
+    setShowAddConfirmation(false);
   };
 
   const handleShowAdd = () => setShowAdd(true);
@@ -38,9 +41,15 @@ export const AddItem = () => {
   const navigate = useNavigate();
 
   const handleAddClick = () => {
-    RecordsAPI.create({ ...addValues, rating }).then(() => {
+    RecordsAPI.create({ ...addValues, rating }).then((record) => {
       setShowAdd(false);
+      setShowAddConfirmation(true);
+      setAddValues({ ...addValues, id: record.id });
     });
+  };
+
+  const handleConfirmationClick = () => {
+    navigate(`/${addValues.id}`);
   };
 
   return (
@@ -122,6 +131,19 @@ export const AddItem = () => {
           </Button>
           <Button variant="danger" onClick={handleClose}>
             Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {/* Confirmation Modal */}
+      <Modal show={showAddConfirmation} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>Item Successfully Added!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleShowAdd}>
+            Add Another Item
+          </Button>
+          <Button variant="success" onClick={handleConfirmationClick}>
+            Go to Item Details
           </Button>
         </Modal.Footer>
       </Modal>
