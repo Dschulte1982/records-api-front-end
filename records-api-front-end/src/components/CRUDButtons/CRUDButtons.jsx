@@ -94,7 +94,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
       direction="horizontal"
       gap={2}
       id="detailed-card-stack"
-      className=" flex-2"
+      className="flex-2"
     >
       <FontAwesomeIcon
         onClick={handleShowEdit}
@@ -223,7 +223,12 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                     setRating={setRating}
                   />
                 </Form.Group>
-                <Button type="submit">Submit form</Button>
+                <Stack direction="horizontal" gap={2} className="flex-2">
+                  <Button type="submit">Save Edit</Button>
+                  <Button type="button" variant="danger" onClick={handleClose}>
+                    Cancel
+                  </Button>
+                </Stack>
               </Form>
             )}
           </Formik>
