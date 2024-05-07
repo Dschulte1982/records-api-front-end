@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { AddItem } from "../AddItem/AddItem";
+import logo from "../../../src/logo-color.png";
 import "./styles.css";
 
 export const NavBar = () => {
@@ -17,7 +18,13 @@ export const NavBar = () => {
       <Navbar key={expand} expand={expand} className="bg-body-tertiary-mb-3">
         <Container fluid className="bg-light">
           <Navbar.Brand href="/" className="navbar-brand">
-            Records CRUD App
+            {/* Records CRUD App */}
+            <img
+              id="navbar-logo"
+              className="align-baseline"
+              src={logo}
+              alt="Color APItems Logo"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
