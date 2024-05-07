@@ -1,3 +1,7 @@
 .navbar-brand {
   font-weight: 700;
 }
+
+#navbar-logo {
+  width: 50%;
+}
