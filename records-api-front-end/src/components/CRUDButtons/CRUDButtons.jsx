@@ -110,21 +110,21 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
         size="2x"
         fixedWidth
       />
-      <Modal show={showEdit} onHide={handleCloseEdit}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Item</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Formik
-            validationSchema={schema}
-            onSubmit={editFormSubmit}
-            initialValues={{
-              name: values.name,
-              description: values.description,
-              price: values.price,
-            }}
-          >
-            {({ handleSubmit, handleChange, values, touched, errors }) => (
+      <Formik
+        validationSchema={schema}
+        onSubmit={editFormSubmit}
+        initialValues={{
+          name: values.name,
+          description: values.description,
+          price: values.price,
+        }}
+      >
+        {({ handleSubmit, handleChange, values, touched, errors }) => (
+          <Modal show={showEdit} onHide={handleCloseEdit}>
+            <Modal.Header closeButton>
+              <Modal.Title>Edit Item</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
               <Form noValidate onSubmit={handleSubmit}>
                 <Form.Group
                   className="mb-3"
@@ -223,17 +223,19 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                     setRating={setRating}
                   />
                 </Form.Group>
-                <Stack direction="horizontal" gap={2} className="flex-2">
-                  <Button type="submit">Save Edit</Button>
-                  <Button type="button" variant="danger" onClick={handleClose}>
-                    Cancel
-                  </Button>
-                </Stack>
               </Form>
-            )}
-          </Formik>
-        </Modal.Body>
-      </Modal>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="primary" type="submit" onClick={handleSubmit}>
+                Save Changes
+              </Button>
+              <Button type="button" variant="danger" onClick={handleClose}>
+                Cancel
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )}
+      </Formik>
       {/* Delete Modal*/}
       <Modal show={showDelete} onHide={handleClose}>
         <Modal.Header closeButton>
