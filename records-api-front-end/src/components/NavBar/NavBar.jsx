@@ -18,7 +18,6 @@ export const NavBar = () => {
       <Navbar key={expand} expand={expand} className="bg-body-tertiary-mb-3">
         <Container fluid className="bg-light">
           <Navbar.Brand href="/" className="navbar-brand">
-            {/* Records CRUD App */}
             <img
               id="navbar-logo"
               className="align-baseline"
