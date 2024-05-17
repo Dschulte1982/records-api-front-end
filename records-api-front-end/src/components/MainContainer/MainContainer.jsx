@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { RecordsAPI } from "../../apis/RecordsAPI";
 import { NavBar } from "../NavBar/NavBar";
-import { WelcomeJumbotron } from "../WelcomeJumbotron/WelcomeJumbotron";
+import { HeroCard } from "../HeroCard/HeroCard";
 import { CardLoader } from "../CardLoader/CardLoader";
 import "./styles.css";
 
@@ -23,7 +23,7 @@ export const MainContainer = () => {
     return (
       <div className="main-container">
         <NavBar />
-        <WelcomeJumbotron />
+        <HeroCard featuredRecord={recordsList.slice(-1)[0]} />
         <CardLoader recordsList={recordsList} />
       </div>
     );
