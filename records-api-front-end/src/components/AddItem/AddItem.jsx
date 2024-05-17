@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -63,13 +62,13 @@ export const AddItem = () => {
 
   const navigate = useNavigate();
 
-  const handleAddClick = () => {
-    RecordsAPI.create({ ...addValues, rating }).then((record) => {
-      setShowAdd(false);
-      setShowAddConfirmation(true);
-      setAddValues({ ...addValues, id: record.id });
-    });
-  };
+  // const handleAddClick = () => {
+  //   RecordsAPI.create({ ...addValues, rating }).then((record) => {
+  //     setShowAdd(false);
+  //     setShowAddConfirmation(true);
+  //     setAddValues({ ...addValues, id: record.id });
+  //   });
+  // };
 
   const handleConfirmationClick = () => {
     navigate(`/${addValues.id}`);
