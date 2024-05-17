@@ -20,7 +20,7 @@ export const WelcomeJumbotron = () => {
           play with. Feel free to add some of your own!
         </p>
         <p>
-          If you enjoy my work and would like to contact me, click the button
+          If you enjoy my work and would like to contact me, click the link
           below to visit my portfolio!
         </p>
         <div className="welcome-action-group">
