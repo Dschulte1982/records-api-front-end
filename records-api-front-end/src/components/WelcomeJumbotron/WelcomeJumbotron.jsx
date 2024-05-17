@@ -1,13 +1,16 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import { AddItem } from "../AddItem/AddItem";
 import "./styles.css";
 
 export const WelcomeJumbotron = () => {
   return (
     <div role="main" className="welcome-container pt-5">
       <Container>
-        <h1 className="display-3">Welcome to APItems!</h1>
+        <h1 id="welcome-header" className="display-4">
+          Welcome to APItems
+        </h1>
         <p>
           This application is a fully-functional CRUD sandbox for you to{" "}
           <b>create</b>, <b>update</b>, or <b>delete</b> items to your heart's
@@ -20,17 +23,25 @@ export const WelcomeJumbotron = () => {
           If you enjoy my work and would like to contact me, click the button
           below to visit my portfolio!
         </p>
-        <p>
+        <div className="welcome-action-group">
           <Button
-            // variant="primary"
             size="lg"
             role="button"
             id="welcome-button"
             className="welcome-button"
           >
-            See more &raquo;
+            <AddItem />
           </Button>
-        </p>
+          <a
+            id="portfolio-link"
+            href="https://dschulte1982.github.io/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See additional projects &raquo;
+            {/* See more work &raquo; */}
+          </a>
+        </div>
       </Container>
     </div>
   );
