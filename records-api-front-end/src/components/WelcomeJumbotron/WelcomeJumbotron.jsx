@@ -22,9 +22,10 @@ export const WelcomeJumbotron = () => {
         </p>
         <p>
           <Button
-            variant="primary"
+            // variant="primary"
             size="lg"
             role="button"
+            id="welcome-button"
             className="welcome-button"
           >
             See more &raquo;
