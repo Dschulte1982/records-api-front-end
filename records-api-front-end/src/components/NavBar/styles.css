@@ -9,3 +9,9 @@
 #navbar-logo {
   width: 60%;
 }
+
+#nav-link-home,
+#nav-link-add-item,
+#nav-link-portfolio {
+  color: #21467b;
+}

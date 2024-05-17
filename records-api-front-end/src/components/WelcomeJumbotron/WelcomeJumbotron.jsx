@@ -39,7 +39,6 @@ export const WelcomeJumbotron = () => {
             rel="noreferrer"
           >
             See additional projects &raquo;
-            {/* See more work &raquo; */}
           </a>
         </div>
       </Container>
