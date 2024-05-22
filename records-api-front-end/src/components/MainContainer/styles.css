@@ -10,3 +10,12 @@
   margin: 0 20px 0 0;
   font-size: 2.5em;
 }
+
+#welcome-header {
+  font-family: "Oswald", "Segoe UI", sans-serif;
+  color: #21467b;
+}
+
+p {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+}

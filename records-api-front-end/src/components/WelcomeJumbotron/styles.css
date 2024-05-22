@@ -8,18 +8,21 @@
 }
 
 #welcome-button {
-  background-color: #1dcdfe;
-  border-color: #1dcdfe;
+  background-color: #21467b;
+  border-color: #21467b;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 #welcome-header {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 10px 0;
 }
 
 .welcome-action-group {
   display: flex;
   flex-direction: row;
+  font-family: "Roboto", "Segoe UI", sans-serif;
   align-items: center;
   margin-top: 20px;
 }
