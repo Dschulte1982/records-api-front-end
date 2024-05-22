@@ -1,5 +1,6 @@
 #card-body-name {
   font-size: 1.8rem;
+  font-family: "Oswald", "Segoe UI", sans-serif;
 }
 
 #card-body-image {
@@ -7,11 +8,13 @@
 }
 
 .card-body-description {
+  font-family: "Roboto", "Segoe UI", sans-serif;
   height: 4rem;
   margin: 20px 0 0 0;
 }
 
 .card-body-price {
+  font-family: "Roboto", "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
 }

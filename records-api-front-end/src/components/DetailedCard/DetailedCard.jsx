@@ -16,7 +16,7 @@ export const DetailedCard = ({ record }) => {
       <div className="tablet-view">
         <Card id="detailed-card-1">
           <Card.Body id="card-body-1" className="detailed-card-body-1">
-            <Card.Text as={"h1"} className="flex-2">
+            <Card.Text as={"h1"} id="detailed-card-1-id" className="flex-2">
               {recordDetails.name}
             </Card.Text>
             <Card.Text className="detailed-card-description flex-3">
@@ -34,7 +34,7 @@ export const DetailedCard = ({ record }) => {
         <Card id="detailed-card-2" className="flex-2">
           <Card.Body className="detailed-card-body-2">
             <div className="detailed-id-and-dates">
-              <Card.Text as={"h3"} className="flex-1" id="detailed-card-2-id">
+              <Card.Text as={"h3"} id="detailed-card-2-id" className="flex-1">
                 ID: {record.id}
               </Card.Text>
               <Card.Text id="created-on" className="created-on">
