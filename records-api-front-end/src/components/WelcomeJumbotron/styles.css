@@ -7,6 +7,27 @@
   border-radius: 0.3rem;
 }
 
-.welcome-button {
-  margin-top: 10px;
+#welcome-button {
+  background-color: #1dcdfe;
+  border-color: #1dcdfe;
+}
+
+#welcome-header {
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.welcome-action-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#welcome-button {
+  font-size: 1rem;
+}
+
+#portfolio-link {
+  margin: 0 0 0 20px;
 }

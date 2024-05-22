@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -62,14 +61,6 @@ export const AddItem = () => {
   const handleShowAdd = () => setShowAdd(true);
 
   const navigate = useNavigate();
-
-  const handleAddClick = () => {
-    RecordsAPI.create({ ...addValues, rating }).then((record) => {
-      setShowAdd(false);
-      setShowAddConfirmation(true);
-      setAddValues({ ...addValues, id: record.id });
-    });
-  };
 
   const handleConfirmationClick = () => {
     navigate(`/${addValues.id}`);
@@ -182,15 +173,26 @@ export const AddItem = () => {
                     value={values.image}
                     onChange={onChangeAddHandler("image")}
                   >
-                    <option readOnly>Open this select menu</option>
-                    <option value="https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=OptionOne">
-                      One
+                    <option disabled readOnly>
+                      Select an image
                     </option>
-                    <option value="https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=OptionTwo">
-                      Two
+                    <option value="https://images.unsplash.com/photo-1586253634026-8cb574908d1e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                      Camera
                     </option>
-                    <option value="https:\/\/via.placeholder.com\/640x480.png\/0000ee?text=OptionThree">
-                      Three
+                    <option value="https://images.unsplash.com/photo-1714630448768-d4f3ab1a154b?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                      Donut
+                    </option>
+                    <option value="https://images.unsplash.com/photo-1586170737392-383ba61aca98?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                      Ruler
+                    </option>
+                    <option value="https://images.unsplash.com/photo-1586941962519-b1a78cf17677?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                      Scissors
+                    </option>
+                    <option value="https://images.unsplash.com/photo-1695073621086-aa692bc32a3d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                      Sneakers
+                    </option>
+                    <option value="https://images.unsplash.com/photo-1587287720536-ce7b84c23d35?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                      Spaghetti
                     </option>
                   </Form.Select>
                 </Form.Group>
