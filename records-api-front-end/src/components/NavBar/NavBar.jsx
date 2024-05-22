@@ -23,7 +23,10 @@ export const NavBar = () => {
               alt="Color APItems Logo"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+          <Navbar.Toggle
+            id="nav-bar-toggle"
+            aria-controls={`offcanvasNavbar-expand-${expand}`}
+          />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -36,10 +39,10 @@ export const NavBar = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link id="nav-link-home" href="/">
+                <Nav.Link id="nav-link-home" className="me-4" href="/">
                   Home
                 </Nav.Link>
-                <Nav.Link id="nav-link-add-item">
+                <Nav.Link id="nav-link-add-item" className="me-4">
                   <AddItem />
                 </Nav.Link>
                 <Nav.Link
