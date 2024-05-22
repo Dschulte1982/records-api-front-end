@@ -13,7 +13,7 @@ export const MainContainer = () => {
   useEffect(() => {
     setRecordsListLoading(true);
     RecordsAPI.getAll().then((records) => {
-      setRecordsList(records);
+      setRecordsList(records.reverse());
       setRecordsListLoading(false);
     });
   }, []);
