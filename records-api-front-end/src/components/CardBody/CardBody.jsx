@@ -15,7 +15,7 @@ export const CardBody = ({
 
   return (
     <Card onClick={handleClickToShowPage}>
-      <Card.Img variant="top" src={image} />
+      <Card.Img id="card-body-image" variant="top" src={image} />
       <Card.Body>
         <Card.Title id="card-body-name">{name}</Card.Title>
         <Card.Text className="card-body-description">{description}</Card.Text>
