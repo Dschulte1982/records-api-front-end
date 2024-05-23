@@ -16,13 +16,13 @@ export const DetailedCard = ({ record }) => {
       <div className="tablet-view">
         <Card id="detailed-card-1">
           <Card.Body id="card-body-1" className="detailed-card-body-1">
-            <Card.Text as={"h1"} id="detailed-card-1-id" className="flex-2">
+            <Card.Text as={"h1"} id="detailed-card-1-id" className="flex-1">
               {recordDetails.name}
             </Card.Text>
             <Card.Text className="detailed-card-description flex-3">
               {recordDetails.description}
             </Card.Text>
-            <Card.Text as={"h2"} className="detailed-card-price flex-1">
+            <Card.Text as={"h2"} className="detailed-card-price flex-3">
               ${recordDetails.price}
             </Card.Text>
             <div id="detailed-star-rating" className="flex-1">
@@ -33,14 +33,14 @@ export const DetailedCard = ({ record }) => {
         <div className="separator"></div>
         <Card id="detailed-card-2" className="flex-2">
           <Card.Body className="detailed-card-body-2">
-            <div className="detailed-id-and-dates">
-              <Card.Text as={"h3"} id="detailed-card-2-id" className="flex-1">
+            <div className="detailed-id-and-dates flex-1">
+              <Card.Text as={"h3"} id="detailed-card-2-id" className="flex-2">
                 ID: {record.id}
               </Card.Text>
-              <Card.Text id="created-on" className="created-on">
+              <Card.Text id="created-on" className="created-on flex-1">
                 <b>Created On:</b> {record.created_at}
               </Card.Text>
-              <Card.Text id="updated-on" className="updated-on">
+              <Card.Text id="updated-on" className="updated-on flex-1">
                 <b>Updated On: </b> {recordDetails.updated_at}
               </Card.Text>
             </div>
