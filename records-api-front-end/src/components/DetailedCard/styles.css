@@ -65,6 +65,12 @@
   flex-direction: column;
 }
 
+.detailed-id-and-dates {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+}
+
 .updated-on,
 .created-on {
   display: flex;
@@ -126,6 +132,10 @@
   .detailed-card-price {
     margin: 0 0 20px 0;
   }
+
+  #detailed-card-stack {
+    align-self: flex-end;
+  }
 }
 
 /* Tablet & Laptop */
@@ -155,11 +165,15 @@
   }
 
   .detailed-card-price {
-    margin: 0 0 20px 0;
+    margin: 25px 0 20px 0;
   }
 
   .separator {
     margin: 0 50px;
+  }
+
+  #detailed-card-stack {
+    align-self: flex-start;
   }
 }
 

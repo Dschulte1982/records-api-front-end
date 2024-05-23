@@ -94,7 +94,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
       direction="horizontal"
       gap={2}
       id="detailed-card-stack"
-      className="flex-2"
+      className="flex-1"
     >
       <FontAwesomeIcon
         onClick={handleShowEdit}
