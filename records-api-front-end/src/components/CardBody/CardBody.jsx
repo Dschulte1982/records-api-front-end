@@ -20,7 +20,7 @@ export const CardBody = ({
         <Card.Title id="card-body-name">{name}</Card.Title>
         <Card.Text className="card-body-description">{description}</Card.Text>
         <Card.Text className="card-body-price">${price}</Card.Text>
-        <Card.Text>
+        <Card.Text as={"div"}>
           <StarRating rating={rating} size={25} />
         </Card.Text>
       </Card.Body>
