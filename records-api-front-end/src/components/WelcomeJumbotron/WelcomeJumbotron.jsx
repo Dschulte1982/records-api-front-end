@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import { AddItem } from "../AddItem/AddItem";
+import AddItem from "../AddItem";
 import "./styles.css";
 
 export const WelcomeJumbotron = () => {

@@ -6,10 +6,10 @@ import Card from "react-bootstrap/Card";
 import "./styles.css";
 
 export const CardBody = ({
-  record: { id, name, description, price, rating, image },
+  item: { id, name, description, price, rating, image },
 }) => {
   const navigate = useNavigate();
-  const handleClickToShowPage = (record) => {
+  const handleClickToShowPage = (item) => {
     navigate(`/${id}`, { state: { action: "show" } });
   };
 
@@ -19,7 +19,7 @@ export const CardBody = ({
       <Card.Body>
         <Card.Title id="card-body-name">{name}</Card.Title>
         <Card.Text className="card-body-description">{description}</Card.Text>
-        <Card.Text className="card-body-price">${price}</Card.Text>
+        <Card.Text className="card-body-price">${price.toFixed(2)}</Card.Text>
         <Card.Text as={"div"}>
           <StarRating rating={rating} size={25} />
         </Card.Text>

@@ -1,7 +1,7 @@
 import React from "react";
-import { MainContainer } from "../../components/MainContainer/MainContainer";
+import MainContainer from "../../components/MainContainer";
 
-export const ListAllRecords = () => {
+export const ListAllItems = () => {
   return (
     <div className="list-page-container">
       <MainContainer />
