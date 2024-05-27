@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { AddItem } from "../AddItem/AddItem";
+import AddItem from "../AddItem";
 import logo from "../../../src/logo-color.png";
 import "./styles.css";
 

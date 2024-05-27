@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { CardBody } from "../CardBody/CardBody";
+import CardBody from "../CardBody";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Pagination from "react-bootstrap/Pagination";
 import "./styles.css";
 
-export const CardLoader = ({ recordsList }) => {
+export const CardLoader = ({ itemsList }) => {
   const [pageState, setPageState] = useState({
     currentData: [],
     pages: [],
@@ -29,21 +29,21 @@ export const CardLoader = ({ recordsList }) => {
   useEffect(() => {
     setPageState((prev) => ({
       ...prev,
-      currentData: recordsList.slice(pageState.min, pageState.max),
+      currentData: itemsList.slice(pageState.min, pageState.max),
       pages: Array.from(
-        { length: (recordsList.length - 1) / 6 + 1 },
+        { length: (itemsList.length - 1) / 6 + 1 },
         (value, index) => 1 + index * 6
       ),
     }));
-  }, [pageState.min, pageState.max, recordsList]);
+  }, [pageState.min, pageState.max, itemsList]);
 
   return (
     <div className="cardloader-main-container">
       <Row xs={1} md={2} lg={3} className="g-4">
-        {pageState.currentData.map((record, idx) => {
+        {pageState.currentData.map((item, idx) => {
           return (
             <Col key={idx}>
-              <CardBody key={record.id} record={record} />
+              <CardBody key={item.id} item={item} />
             </Col>
           );
         })}
@@ -78,5 +78,5 @@ export const CardLoader = ({ recordsList }) => {
 };
 
 CardLoader.propTypes = {
-  recordsList: PropTypes.array,
+  itemsList: PropTypes.array,
 };

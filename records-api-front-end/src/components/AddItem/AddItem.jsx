@@ -141,7 +141,7 @@ export const AddItem = () => {
                     isInvalid={!!errors.description}
                   />
                   <Form.Control.Feedback>
-                    Description looks good!
+                    Item description looks good!
                   </Form.Control.Feedback>
                   <Form.Control.Feedback type="invalid">
                     {errors.description}
