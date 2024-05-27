@@ -23,9 +23,13 @@ export const AddItem = () => {
       .max(250, "Too Long")
       .required("A description is required."),
     price: yup
-      .string()
-      .required()
-      .matches(/^[0-9]*\.[0-9]{2}$/, "Invalid price"),
+      .number()
+      .test(
+        "maxDigitsAfterDecimal",
+        "Price cannot have more than two decimal places",
+        (price) => /^\d+(\.\d{1,2})?$/.test(price)
+      )
+      .required(),
   });
 
   const [showAdd, setShowAdd] = useState(false);
@@ -45,12 +49,6 @@ export const AddItem = () => {
     if (e.key === " ") {
       e.stopPropagation();
     }
-  };
-
-  const onChangeAddHandler = (attribute) => {
-    return (event) => {
-      setAddValues({ ...addValues, [attribute]: event.target.value });
-    };
   };
 
   const handleClose = () => {
@@ -91,7 +89,9 @@ export const AddItem = () => {
         initialValues={{
           name: "",
           description: "",
-          price: "",
+          price: 0.0,
+          image:
+            "https://images.unsplash.com/photo-1586253634026-8cb574908d1e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         }}
       >
         {({ handleSubmit, handleChange, values, touched, errors }) => (
@@ -153,7 +153,7 @@ export const AddItem = () => {
                 >
                   <Form.Label>Price</Form.Label>
                   <Form.Control
-                    type="string"
+                    type="number"
                     name="price"
                     placeholder="Enter the item price..."
                     value={values.price}
@@ -171,7 +171,7 @@ export const AddItem = () => {
                     aria-label="add-form-image-select"
                     name="image"
                     value={values.image}
-                    onChange={onChangeAddHandler("image")}
+                    onChange={handleChange}
                   >
                     <option disabled readOnly>
                       Select an image

@@ -27,9 +27,13 @@ export const CRUDButtons = ({ item, setItemDetails }) => {
       .max(250, "Too Long")
       .required("A description is required."),
     price: yup
-      .string()
-      .required()
-      .matches(/^[0-9]*\.[0-9]{2}$/, "Invalid price"),
+      .number()
+      .test(
+        "maxDigitsAfterDecimal",
+        "Price cannot have more than two decimal places",
+        (price) => /^\d+(\.\d{1,2})?$/.test(price)
+      )
+      .required(),
   });
 
   const [rating, setRating] = useState(item.rating);
@@ -46,6 +50,7 @@ export const CRUDButtons = ({ item, setItemDetails }) => {
     image: item.image,
   });
 
+  console.log(typeof values.price);
   useEffect(() => {
     if (isSubmitting) {
       RecordsAPI.update({ ...values, rating }).then(() => {
@@ -175,7 +180,7 @@ export const CRUDButtons = ({ item, setItemDetails }) => {
                 >
                   <Form.Label>Price</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     name="price"
                     value={values.price}
                     onChange={handleChange}
