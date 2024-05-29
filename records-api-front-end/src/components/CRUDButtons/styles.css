@@ -1,14 +1,16 @@
 /* Buttons */
-#detailed-card-stack {
-  transform: scale(0.8);
-}
-
-.detailed-edit-icon {
-  color: #0d6efd;
-}
-
+.detailed-edit-icon,
 .detailed-delete-icon {
-  color: red;
+  width: 27px;
+  height: 27px;
+}
+
+.detailed-edit-icon:hover {
+  color: #1dcdfe;
+}
+
+.detailed-delete-icon:hover {
+  color: #ff2442;
 }
 
 /* Mobile */

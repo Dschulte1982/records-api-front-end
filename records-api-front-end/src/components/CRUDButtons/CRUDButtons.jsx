@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StarRating from "../StarRating";
 import { RecordsAPI } from "../../apis/RecordsAPI";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as formik from "formik";
 import * as yup from "yup";
 import "./styles.css";
 
-export const CRUDButtons = ({ record, setRecordDetails }) => {
+export const CRUDButtons = ({ item, setItemDetails }) => {
   const { Formik } = formik;
 
   const schema = yup.object().shape({
@@ -27,34 +27,39 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
       .max(250, "Too Long")
       .required("A description is required."),
     price: yup
-      .string()
-      .required()
-      .matches(/^[0-9]*\.[0-9]{2}$/, "Invalid price"),
+      .number()
+      .test(
+        "maxDigitsAfterDecimal",
+        "Price cannot have more than two decimal places",
+        (price) => /^\d+(\.\d{1,2})?$/.test(price)
+      )
+      .required(),
   });
 
-  const [rating, setRating] = useState(record.rating);
+  const [rating, setRating] = useState(item.rating);
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEditConfirmation, setShowEditConfirmation] = useState(false);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [values, setValues] = useState({
-    id: record.id,
-    name: record.name,
-    description: record.description,
-    price: record.price,
-    image: record.image,
+    id: item.id,
+    name: item.name,
+    description: item.description,
+    price: item.price,
+    image: item.image,
   });
 
+  console.log(typeof values.price);
   useEffect(() => {
     if (isSubmitting) {
       RecordsAPI.update({ ...values, rating }).then(() => {
-        setRecordDetails({ ...values, rating });
+        setItemDetails({ ...values, rating });
         setShowEdit(false);
         setShowEditConfirmation(true);
       });
     }
-  }, [values, isSubmitting, rating, setRecordDetails]);
+  }, [values, isSubmitting, rating, setItemDetails]);
 
   const navigate = useNavigate();
 
@@ -94,7 +99,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
       direction="horizontal"
       gap={2}
       id="detailed-card-stack"
-      className="flex-2"
+      className="flex-1"
     >
       <FontAwesomeIcon
         onClick={handleShowEdit}
@@ -163,7 +168,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                     isInvalid={!!errors.description}
                   />
                   <Form.Control.Feedback>
-                    Description looks good!
+                    Item description looks good!
                   </Form.Control.Feedback>
                   <Form.Control.Feedback type="invalid">
                     {errors.description}
@@ -175,7 +180,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
                 >
                   <Form.Label>Price</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     name="price"
                     value={values.price}
                     onChange={handleChange}
@@ -258,7 +263,7 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
           <Button variant="primary" onClick={handleClose}>
             Return
           </Button>
-          <Button variant="danger" onClick={() => handleDeleteClick(record.id)}>
+          <Button variant="danger" onClick={() => handleDeleteClick(item.id)}>
             Confirm Deletion
           </Button>
         </Modal.Footer>
@@ -288,5 +293,5 @@ export const CRUDButtons = ({ record, setRecordDetails }) => {
 };
 
 CRUDButtons.propTypes = {
-  record: PropTypes.object,
+  item: PropTypes.object,
 };

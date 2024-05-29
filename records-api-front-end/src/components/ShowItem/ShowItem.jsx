@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../NavBar";
+import { useParams } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import WelcomeJumbotron from "../WelcomeJumbotron";
-import CardLoader from "../CardLoader";
+import NavBar from "../NavBar";
+import DetailedCard from "../DetailedCard";
 import { RecordsAPI } from "../../apis/RecordsAPI";
-import "./styles.css";
 
-export const MainContainer = () => {
-  const [itemsListLoading, setItemsListLoading] = useState(true);
-  const [itemsList, setItemsList] = useState([]);
+export const ShowItem = () => {
+  const [itemLoading, setItemLoading] = useState(true);
+  const [item, setItem] = useState([]);
+
+  const { id } = useParams();
 
   useEffect(() => {
-    setItemsListLoading(true);
-    RecordsAPI.getAll().then((items) => {
-      setItemsList(items.reverse());
-      setItemsListLoading(false);
+    setItemLoading(true);
+    RecordsAPI.get(id).then((item) => {
+      setItem(item);
+      setItemLoading(false);
     });
-  }, []);
+  }, [id]);
 
-  if (itemsListLoading) {
+  if (itemLoading) {
     return (
       <div id="loading-container">
         <div className="loading-div">Loading...</div>
@@ -35,10 +36,9 @@ export const MainContainer = () => {
     );
   } else {
     return (
-      <div className="main-container">
+      <div className="show-record-main-container">
         <NavBar />
-        <WelcomeJumbotron />
-        <CardLoader itemsList={itemsList} />
+        <DetailedCard item={item} />
       </div>
     );
   }

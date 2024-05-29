@@ -9,8 +9,6 @@ export const StarRating = ({ rating, size, active, setRating }) => {
     setRating(ratingValue);
   };
 
-  // https://codesandbox.io/p/sandbox/react-five-star-rating-9dwks?file=%2Fsrc%2FStarRating.js%3A25%2C70-25%2C77
-
   if (active) {
     return (
       <div>
@@ -39,7 +37,7 @@ export const StarRating = ({ rating, size, active, setRating }) => {
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
           return (
-            <label>
+            <label key={i}>
               <IoMdStar
                 key={i}
                 className="star"
