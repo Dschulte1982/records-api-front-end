@@ -18,3 +18,45 @@
   font-weight: 500;
   font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 274.99px) {
+  #card-body-name {
+    font-size: 1.3rem;
+  }
+
+  .card-body-description {
+    font-size: 0.6rem;
+  }
+
+  .card-body-price {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 257px) {
+  #card-body-name {
+    font-size: 1.5rem;
+  }
+
+  .card-body-description {
+    font-size: 0.8rem;
+  }
+
+  .card-body-price {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  #card-body-name {
+    font-size: 1.8rem;
+  }
+
+  .card-body-description {
+    font-size: 1rem;
+  }
+
+  .card-body-price {
+    font-size: 1.5rem;
+  }
+}
