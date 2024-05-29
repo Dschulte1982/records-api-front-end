@@ -13,8 +13,13 @@ export const NavBar = () => {
 
   return (
     <>
-      <Navbar key={expand} expand={expand} className="bg-body-tertiary-mb-3">
-        <Container fluid className="bg-light" id="navbar">
+      <Navbar
+        key={expand}
+        expand={expand}
+        id="navbar"
+        className="bg-body-tertiary-mb-3"
+      >
+        <Container fluid className="bg-light" id="navbar-container">
           <Navbar.Brand href="/" className="navbar-brand">
             <img
               id="navbar-logo"
@@ -34,7 +39,7 @@ export const NavBar = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Options
+                Menu
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

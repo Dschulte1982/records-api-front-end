@@ -19,7 +19,6 @@ export const CardBody = ({
       <Card.Img id="card-body-image" variant="top" src={image} />
       <Card.Body>
         <Card.Title id="card-body-name">{name}</Card.Title>
-        {/* <Card.Text className="card-body-description">{description}</Card.Text> */}
         <Card.Text as="div" className="card-body-description">
           <LinesEllipsis
             text={description}
