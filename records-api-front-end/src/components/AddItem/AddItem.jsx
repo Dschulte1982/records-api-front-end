@@ -217,7 +217,7 @@ export const AddItem = () => {
               </Button>
               <Button
                 type="button"
-                id="delete-item-button"
+                id="add-item-cancel-button"
                 onClick={handleClose}
               >
                 <span class="text">Cancel</span>

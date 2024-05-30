@@ -243,11 +243,29 @@ export const CRUDButtons = ({ item, setItemDetails }) => {
               </Form>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="primary" type="submit" onClick={handleSubmit}>
+              <Button
+                type="submit"
+                id="edit-save-button"
+                onClick={handleSubmit}
+              >
                 Save Changes
               </Button>
-              <Button type="button" variant="danger" onClick={handleClose}>
-                Cancel
+              <Button
+                type="button"
+                id="edit-cancel-button"
+                onClick={handleClose}
+              >
+                <span class="text">Cancel</span>
+                <span class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                  </svg>
+                </span>
               </Button>
             </Modal.Footer>
           </Modal>
@@ -260,10 +278,13 @@ export const CRUDButtons = ({ item, setItemDetails }) => {
         </Modal.Header>
         <Modal.Body>Are you sure you want to delete this item?</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button id="delete-return-button" onClick={handleClose}>
             Return
           </Button>
-          <Button variant="danger" onClick={() => handleDeleteClick(item.id)}>
+          <Button
+            id="delete-confirm-button"
+            onClick={() => handleDeleteClick(item.id)}
+          >
             Confirm Deletion
           </Button>
         </Modal.Footer>
