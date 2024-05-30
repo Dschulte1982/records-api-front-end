@@ -8,7 +8,7 @@
   border-color: #142a4a;
 }
 
-#delete-item-button {
+#add-item-cancel-button {
   width: 120px;
   height: 38px;
   margin: 0;
@@ -23,17 +23,17 @@
   background: #b31312;
 }
 
-#delete-item-buttonbutton,
-#delete-item-button span {
+#add-item-cancel-button,
+#add-item-cancel-button span {
   transition: 200ms;
 }
 
-#delete-item-button .text {
+#add-item-cancel-button .text {
   transform: translateX(15px);
   color: white;
 }
 
-#delete-item-button .icon {
+#add-item-cancel-button .icon {
   position: absolute;
   border-left: 1px solid white;
   transform: translateX(80px);
@@ -44,29 +44,59 @@
   justify-content: center;
 }
 
-#delete-item-button svg {
+#add-item-cancel-button svg {
   width: 15px;
   fill: #eee;
 }
 
-#delete-item-button:hover {
+#add-item-cancel-button:hover {
   background: #b31312;
 }
 
-#delete-item-button:hover .text {
+#add-item-cancel-button:hover .text {
   color: transparent;
 }
 
-#delete-item-button:hover .icon {
+#add-item-cancel-button:hover .icon {
   width: 120px;
   border-left: none;
   transform: translateX(0);
 }
 
-#delete-item-button:focus {
+#add-item-cancel-button:focus {
   outline: none;
 }
 
-#delete-item-button:active .icon svg {
+#add-item-cancel-button:active .icon svg {
   transform: scale(0.8);
+}
+
+/* Mobile */
+@media only screen and (max-width: 767.99px) {
+  #add-item-cancel-button {
+    width: 90px;
+  }
+
+  #add-item-cancel-button .text {
+    transform: translateX(20px);
+  }
+
+  #add-item-cancel-button .icon {
+    visibility: hidden;
+  }
+}
+
+/* Table, Laptop, Desktop */
+@media only screen and (min-width: 768px) {
+  #add-item-cancel-button {
+    width: 120px;
+  }
+
+  #add-item-cancel-button .text {
+    transform: translateX(15px);
+  }
+
+  #add-item-cancel-button .icon {
+    visibility: visible;
+  }
 }
