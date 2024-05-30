@@ -7,6 +7,7 @@ import StarRating from "../StarRating";
 import { RecordsAPI } from "../../apis/RecordsAPI";
 import * as formik from "formik";
 import * as yup from "yup";
+import "./styles.css";
 
 export const AddItem = () => {
   const { Formik } = formik;
@@ -211,11 +212,32 @@ export const AddItem = () => {
               </Form>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="primary" type="submit" onClick={handleSubmit}>
+              <Button id="add-item-button" type="submit" onClick={handleSubmit}>
                 Add Item
               </Button>
-              <Button type="button" variant="danger" onClick={handleClose}>
+              {/* <Button
+                type="button"
+                id="delete-item-button"
+                onClick={handleClose}
+              >
                 Cancel
+              </Button> */}
+              <Button
+                type="button"
+                id="delete-item-button"
+                onClick={handleClose}
+              >
+                <span class="text">Cancel</span>
+                <span class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                  </svg>
+                </span>
               </Button>
             </Modal.Footer>
           </Modal>
