@@ -1,4 +1,4 @@
-/* Buttons */
+/* Buttons General */
 .detailed-edit-icon,
 .detailed-delete-icon {
   width: 27px;
@@ -13,12 +13,107 @@
   color: #b31312;
 }
 
+#edit-save-button,
+#delete-return-button {
+  background-color: #21467b;
+  border-color: #21467b;
+}
+
+#edit-save-button:hover,
+#delete-return-button:hover {
+  background-color: #142a4a;
+  border-color: #142a4a;
+}
+
+/* Edit Buttons */
+#edit-cancel-button {
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: #b31312;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#edit-cancel-buttonbutton,
+#edit-cancel-button span {
+  transition: 200ms;
+}
+
+#edit-cancel-button .text {
+  color: white;
+}
+
+#edit-cancel-button .icon {
+  position: absolute;
+  border-left: 1px solid white;
+  transform: translateX(80px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#edit-cancel-button svg {
+  width: 15px;
+  fill: #eee;
+}
+
+#edit-cancel-button:hover {
+  background: #b31312;
+}
+
+#edit-cancel-button:hover .text {
+  color: transparent;
+}
+
+#edit-cancel-button:hover .icon {
+  width: 120px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+#edit-cancel-button:focus {
+  outline: none;
+}
+
+#edit-cancel-button:active .icon svg {
+  transform: scale(0.8);
+}
+
+/* Delete Buttons */
+#delete-confirm-button {
+  background-color: #b31312;
+  border-color: #b31312;
+}
+
+#delete-confirm-button:hover {
+  background-color: #6b0b0b;
+}
+
 /* Mobile */
 @media only screen and (max-width: 767.99px) {
   #detailed-card-stack {
     align-items: flex-end;
     align-self: flex-end;
     justify-content: flex-end;
+  }
+
+  #edit-cancel-button {
+    width: 90px;
+  }
+
+  #edit-cancel-button .text {
+    transform: translateX(20px);
+  }
+
+  #edit-cancel-button .icon {
+    visibility: hidden;
   }
 }
 
@@ -28,6 +123,18 @@
     align-items: flex-end;
     align-self: flex-end;
     justify-content: flex-end;
+  }
+
+  #edit-cancel-button {
+    width: 120px;
+  }
+
+  #edit-cancel-button .text {
+    transform: translateX(15px);
+  }
+
+  #edit-cancel-button .icon {
+    visibility: visible;
   }
 }
 
