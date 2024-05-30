@@ -215,13 +215,6 @@ export const AddItem = () => {
               <Button id="add-item-button" type="submit" onClick={handleSubmit}>
                 Add Item
               </Button>
-              {/* <Button
-                type="button"
-                id="delete-item-button"
-                onClick={handleClose}
-              >
-                Cancel
-              </Button> */}
               <Button
                 type="button"
                 id="delete-item-button"
