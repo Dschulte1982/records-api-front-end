@@ -15,9 +15,9 @@ export const WelcomeJumbotron = () => {
           This application is a fully-functional CRUD sandbox for you to{" "}
           <b>create</b>, <b>update</b>, or <b>delete</b> items to your heart's
           content. Based upon an Android application of the same name, you can
-          interact with my Laravel items API. Utilizing the Laravel faker
-          library, a number of existing items are already present for you to
-          play with. Feel free to add some of your own!
+          interact with the same Laravel items API built for the mobile app. A
+          number of existing items are already present for you to play with, or
+          feel free to <b>add some of your own</b>!
         </p>
         <p>
           If you enjoy my work and would like to contact me, click the link
