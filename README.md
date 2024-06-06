@@ -3,6 +3,8 @@
 APItems is an interactive CRUD sandbox intended for aspiring software developers. This responsive and user-friendly application is a simple-yet-effective educational tool to assist new developers with understanding the fundamentals of creating, updating, and deleting
 elements and RESTful endpoints. Built with a React front-end that connects to my custom-built Laravel / PHP records web API, APItems is a must-bookmark for anyone beginning their software development journey!
 
+<br>
+
 # Screenshots
 
 ## Landing Page
@@ -14,7 +16,7 @@ elements and RESTful endpoints. Built with a React front-end that connects to my
 ## Create Modal
 ![apitems_add_modal](https://github.com/Dschulte1982/records-api-front-end/assets/65473402/82810d53-ec25-4980-80d6-600162123c16)
 
-
+<br><br>
 # API Endpoints
 
 ### Items
