@@ -37,24 +37,23 @@ elements and RESTful endpoints. Built with a React front-end that connects to my
 
 {
 
-   item: {
-        id: 17,
-        name: "Game Boy Advance",
-        description: "The Game Boy Advance is a 32-bit handheld gaming console developed by Nintendo. Serving as the successor to the Game Boy Color, it offered a wide range of games and entertainment options.",
-        price: 199.99,
-        rating: 3
-        createdOn: "2024-02-01",
-        updatedOn: "2024-05-28"
-    }
 
-    items: {
+     item: {
+          id: 17,
+          name: "Game Boy Advance",
+          description: "The Game Boy Advance is a 32-bit handheld gaming console developed by Nintendo. Serving as the successor to the Game Boy Color, it offered a wide range of games and entertainment options.",
+          price: 199.99,
+          rating: 3
+          createdOn: "2024-02-01",
+          updatedOn: "2024-05-28"
+         }
+         
 
-          owned: [
+    items: [
             {id: 1, name: "Light Bulb", description: "A 60-watt dimmable LED light bulb that is energy-efficient and provides long-lasting...", price: 8.99, rating: 2, createdOn: "2024-02-01", updatedOn: "2024-05-28"},
             {id: 2, name: "Sunglasses", description: "Iconic black-framed Wayfarer Classics sunglasses, a timeless style since 1952. Protect...", price: 180.00, rating: 3, createdOn: "2024-02-01", updatedOn: "2024-05-28"},
             ...
-          ],
-
+           ]    
 }
 
 <br></br>
